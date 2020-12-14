@@ -1,0 +1,38 @@
+{
+  "find": [
+    {
+      "type": "example-student",
+      "attribute": {
+        "queryParams": {
+          "operations": {
+            "colHeightMode": true,
+            "fullScreen": true,
+            "reload": true,
+            "colSetting": [
+              "姓名",
+              "班级",
+              "性别",
+              "爱好",
+              "年龄",
+              "操作"
+            ]
+          },
+          "name": "慕容云海",
+          "age": "19"
+        },
+        "pagination": {
+          "page": 1,
+          "pageSize": 10
+        }
+      },
+      "id": "example-student"
+    },
+    {
+      "type": "global-setting",
+      "attribute": {
+        "layout": "sider-layout"
+      },
+      "id": "global-setting"
+    }
+  ]
+}

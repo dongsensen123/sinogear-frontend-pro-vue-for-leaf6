@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "loginName": "guest",
+      "email": "123456789@qq.com",
+      "phoneNumber": "15626122621",
+      "userName": "游客12",
+      "cardCode": "440223201808162228",
+      "remark": "我是游客135",
+      "originalPassword": "guest",
+      "newPassword": "guest",
+      "confirmPassword": "guest",
+      "id": "dd55bda7-df0d-4b77-99b2-7056717c6923"
+    }
+  ],
+  "userStatus": {
+    "lastLogin": "2020-08-20T10:12:19.485+00:00",
+    "userId": "dd55bda7-df0d-4b77-99b2-7056717c6923",
+    "online": true,
+    "loginCount": 544,
+    "id": "dd55bda7-df0d-4b77-99b2-7056717c6923"
+  }
+}
