@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>编组 18</title>
+    <desc>Created with Sketch.</desc>
+    <g id="设计稿v1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="介绍页" transform="translate(-590.000000, -2216.000000)">
+            <g id="优势" transform="translate(360.000000, 1539.000000)">
+                <g id="编组-3备份-2" transform="translate(0.000000, 631.000000)">
+                    <g id="编组-18" transform="translate(230.000000, 46.000000)">
+                        <circle id="椭圆形" fill="#FCF1EF" cx="60" cy="60" r="60"></circle>
+                        <g id="battery-charge-line" transform="translate(25.000000, 24.000000)" fill-rule="nonzero">
+                            <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="72" height="72"></rect>
+                            <path d="M24,57 L8.99999998,57 C7.34314574,57 5.99999998,55.6568543 5.99999998,54 L5.99999998,18 C5.99999998,16.3431457 7.34314574,15 8.99999998,15 L28.875,15 L25.374,21 L12,21 L12,51 L24,51 L24,57 L24,57 Z M37.125,57 L40.626,51 L54,51 L54,21 L42,21 L42,15 L57,15 C58.6568543,15 60,16.3431458 60,18 L60,54 C60,55.6568542 58.6568543,57 57,57 L37.125,57 L37.125,57 Z M63,27 L69,27 L69,45 L63,45 L63,27 Z M36,33 L45,33 L30,57 L30,39 L21,39 L36,15 L36,33 Z" id="形状" fill="#FF765D"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

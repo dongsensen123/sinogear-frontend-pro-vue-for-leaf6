@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="762px" height="536px" viewBox="0 0 762 536" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>编组 26</title>
+    <desc>Created with Sketch.</desc>
+    <g id="设计稿v1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="介绍页" transform="translate(-359.000000, -4940.000000)">
+            <g id="编组-26" transform="translate(360.000000, 4940.000000)">
+                <g id="编组-21" transform="translate(66.000000, 0.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="208" height="48" rx="4"></rect>
+                    <text id="Web-Client" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="63" y="30">Web Client</tspan>
+                    </text>
+                </g>
+                <g id="编组-22" transform="translate(0.000000, 198.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="572" height="48" rx="4"></rect>
+                    <text id="API-Gateway" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="238.832" y="29">API Gateway</tspan>
+                    </text>
+                </g>
+                <path id="直线-2" d="M119.5,55 L129,74 L121,74 L121,199 L118,199 L118,74 L110,74 L119.5,55 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-2" d="M285.996504,125.500012 L295.629135,144.433116 L287.629,144.489 L287.999963,197.489511 L288.010453,198.989474 L285.010526,199.010453 L285.000037,197.510489 L284.629,144.509 L276.6296,144.56598 L285.996504,125.500012 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-2" d="M440,54.5 L449.5,73.5 L441.5,73.5 L441.5,198.5 L438.5,198.5 L438.5,73.5 L430.5,73.5 L440,54.5 Z" fill="#797979" fill-rule="nonzero"></path>
+                <text id="JSON" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="130.42" y="157">JSON</tspan>
+                </text>
+                <text id="Notiications" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="297" y="157">Notiications</tspan>
+                </text>
+                <text id="HTTP,WebSocket" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="471" y="157">HTTP,WebSocket</tspan>
+                </text>
+                <text id="HTTP" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="94" y="371">HTTP</tspan>
+                </text>
+                <text id="HTTP备份" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="297.5" y="371">HTTP</tspan>
+                </text>
+                <text id="Subscribe" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="498" y="425">Subscribe</tspan>
+                </text>
+                <text id="Publish" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="575" y="346">Publish</tspan>
+                </text>
+                <text id="Client-side" font-family="PingFangSC-Semibold, PingFang SC" font-size="16" font-weight="500" fill="#333333">
+                    <tspan x="671" y="111">Client side</tspan>
+                </text>
+                <text id="Server-side" font-family="PingFangSC-Semibold, PingFang SC" font-size="16" font-weight="500" fill="#333333">
+                    <tspan x="671" y="219">Server side</tspan>
+                </text>
+                <g id="编组-23" transform="translate(68.000000, 454.000000)">
+                    <path d="M94,14 L94,68 L93.9682886,68.0005734 C93.051547,75.2245051 72.3739267,81 47,81 C21.6260733,81 0.94845301,75.2245051 0.0317113701,68.0005734 L0,68 L0,14 L94,14 Z" id="形状结合" stroke="#3D3D3D" fill="#007AFF"></path>
+                    <text id="SQL" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="30.104" y="54">SQL</tspan>
+                    </text>
+                    <ellipse id="椭圆形" stroke="#3D3D3D" fill="#007AFF" cx="47" cy="13.5" rx="47" ry="13.5"></ellipse>
+                </g>
+                <g id="编组-24" transform="translate(240.000000, 454.000000)">
+                    <path d="M94,14 L94,68 L93.9682886,68.0005734 C93.051547,75.2245051 72.3739267,81 47,81 C21.6260733,81 0.94845301,75.2245051 0.0317113701,68.0005734 L0,68 L0,14 L94,14 Z" id="形状结合备份" stroke="#3D3D3D" fill="#007AFF"></path>
+                    <text id="SQL" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="31.104" y="54">SQL</tspan>
+                    </text>
+                    <ellipse id="椭圆形备份-4" stroke="#3D3D3D" fill="#007AFF" cx="47" cy="13.5" rx="47" ry="13.5"></ellipse>
+                </g>
+                <g id="编组-25" transform="translate(410.000000, 454.000000)">
+                    <path d="M94,14 L94,68 L93.9682886,68.0005734 C93.051547,75.2245051 72.3739267,81 47,81 C21.6260733,81 0.94845301,75.2245051 0.0317113701,68.0005734 L0,68 L0,14 L94,14 Z" id="形状结合备份-2" stroke="#3D3D3D" fill="#007AFF"></path>
+                    <text id="NoSQL" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="20.664" y="54">NoSQL</tspan>
+                    </text>
+                    <ellipse id="椭圆形备份-5" stroke="#3D3D3D" fill="#007AFF" cx="47" cy="13.5" rx="47" ry="13.5"></ellipse>
+                </g>
+                <line x1="0.5" y1="174.5" x2="759.5" y2="174.5" id="直线-4" stroke="#979797" stroke-linecap="square"></line>
+                <path id="直线-5" d="M83.5,245.5 L83.5,274.5 L89.5,274.5 L82.5,288.5 L75.5,274.5 L81.5,274.5 L81.5,245.5 L83.5,245.5 Z" fill="#797979" fill-rule="nonzero"></path>
+                <g id="编组-21备份-2" transform="translate(182.000000, 75.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="208" height="48" rx="4"></rect>
+                    <text id="loT" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="92.48" y="30">loT</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-4" transform="translate(1.000000, 289.000000)">
+                    <rect id="矩形" stroke="#007AFF" fill="#FFFFFF" x="0" y="0" width="169" height="48" rx="4"></rect>
+                    <text id="Service" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#007AFF">
+                        <tspan x="57.864" y="30">Service</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-7" transform="translate(0.000000, 379.000000)">
+                    <rect id="矩形" stroke="#007AFF" fill="#FFFFFF" x="0" y="0" width="169" height="48" rx="4"></rect>
+                    <text id="Service" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#007AFF">
+                        <tspan x="57.864" y="30">Service</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-8" transform="translate(202.000000, 379.000000)">
+                    <rect id="矩形" stroke="#007AFF" fill="#FFFFFF" x="0" y="0" width="169" height="48" rx="4"></rect>
+                    <text id="Service" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#007AFF">
+                        <tspan x="57.864" y="30">Service</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-5" transform="translate(202.000000, 289.000000)">
+                    <rect id="矩形" stroke="#007AFF" fill="#FFFFFF" x="0" y="0" width="169" height="48" rx="4"></rect>
+                    <text id="Service" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#007AFF">
+                        <tspan x="57.864" y="30">Service</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-6" transform="translate(402.000000, 289.000000)">
+                    <rect id="矩形" stroke="#007AFF" fill="#FFFFFF" x="0" y="0" width="169" height="48" rx="4"></rect>
+                    <text id="Service" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#007AFF">
+                        <tspan x="57.864" y="30">Service</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份" transform="translate(307.000000, 0.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="208" height="48" rx="4"></rect>
+                    <text id="Mobile-Client" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="55" y="30">Mobile Client</tspan>
+                    </text>
+                </g>
+                <path id="直线-5" d="M287,245.5 L287,274.5 L293,274.5 L286,288.5 L279,274.5 L285,274.5 L285,245.5 L287,245.5 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5" d="M488,245.5 L488,274.5 L494,274.5 L487,288.5 L480,274.5 L486,274.5 L486,245.5 L488,245.5 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5" d="M84,336 L84,365 L90,365 L83,379 L76,365 L82,365 L82,336 L84,336 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5备份" d="M287.5,336 L287.5,365 L293.5,365 L286.5,379 L279.5,365 L285.5,365 L285.5,336 L287.5,336 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5" d="M85.0940721,428.588919 L85.7525767,429.341495 L97.533,442.805 L102.048972,438.854394 L106,454 L91.5128986,448.073459 L96.028,444.122 L84.2474233,430.658505 L83.5889187,429.905928 L85.0940721,428.588919 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5" d="M288,426 L288,443 L294,443 L287,457 L280,443 L286,443 L286,426 L288,426 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5" d="M470.128176,337.886482 L472.113518,338.128176 L471.992671,339.120847 L459.684,440.223 L465.640555,440.948532 L457,454 L451.743159,439.256675 L457.698,439.981 L470.007329,338.879153 L470.128176,337.886482 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5" d="M497.23487,335.81064 L498.212115,336.022755 L613.53,361.053 L614.80338,355.189675 L627,365 L611.833769,368.871101 L613.106,363.007 L497.787885,337.977245 L496.81064,337.76513 L497.23487,335.81064 Z" fill="#797979" fill-rule="nonzero"></path>
+                <path id="直线-5" d="M394,396 L394,402 L628,402 L628,404 L394,404 L394,410 L380,403 L394,396 Z" fill="#797979" fill-rule="nonzero"></path>
+                <polygon id="矩形" stroke="#979797" stroke-width="2" fill="#D8D8D8" points="639 289 718.571834 289 760 329 760 439 639 439"></polygon>
+                <text id="Message-Queue" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#333333">
+                    <tspan x="671" y="360">Message</tspan>
+                    <tspan x="671" y="382">Queue</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

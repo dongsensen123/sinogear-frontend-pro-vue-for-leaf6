@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="697px" height="929px" viewBox="0 0 697 929" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>编组 36</title>
+    <desc>Created with Sketch.</desc>
+    <g id="设计稿v1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-36" transform="translate(1.000000, 1.000000)">
+            <g id="编组-34" transform="translate(0.000000, 66.000000)">
+                <g id="编组-33" stroke="#DDDDDD">
+                    <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="695" height="366"></rect>
+                    <rect id="矩形" fill="#F8FBFF" x="168" y="0" width="527" height="366"></rect>
+                </g>
+                <g id="编组-21备份" transform="translate(27.000000, 159.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="122" height="48" rx="4"></rect>
+                    <text id="通用功能层" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="21.5" y="30">通用功能层</tspan>
+                    </text>
+                </g>
+                <line x1="300" y1="60" x2="300" y2="342" id="直线-6" stroke="#D2D2D2" stroke-linecap="square"></line>
+                <line x1="432" y1="60" x2="432" y2="342" id="直线-6备份" stroke="#D2D2D2" stroke-linecap="square"></line>
+                <line x1="564" y1="60" x2="564" y2="342" id="直线-6备份-2" stroke="#D2D2D2" stroke-linecap="square"></line>
+                <text id="组织管理" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#333333">
+                    <tspan x="202" y="35">组织管理</tspan>
+                </text>
+                <text id="权限管理" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#333333">
+                    <tspan x="334" y="35">权限管理</tspan>
+                </text>
+                <text id="系统管理" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#333333">
+                    <tspan x="466" y="35">系统管理</tspan>
+                </text>
+                <text id="流程管理" font-family="PingFangSC-Medium, PingFang SC" font-size="16" font-weight="400" fill="#333333">
+                    <tspan x="598" y="35">流程管理</tspan>
+                </text>
+                <g id="编组-21备份-10" transform="translate(190.000000, 60.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="公司管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">公司管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-15" transform="translate(322.000000, 60.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="菜单管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">菜单管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-20" transform="translate(454.000000, 60.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="数据字典" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">数据字典</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-25" transform="translate(585.000000, 60.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="我的待办" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">我的待办</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-16" transform="translate(322.000000, 120.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="权限分配" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">权限分配</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-21" transform="translate(454.000000, 120.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="接口管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">接口管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-26" transform="translate(585.000000, 120.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="流程管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">流程管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-17" transform="translate(322.000000, 180.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="页面维护" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">页面维护</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-22" transform="translate(454.000000, 180.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="附件管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">附件管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-27" transform="translate(585.000000, 180.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="流程设计" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">流程设计</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-29" transform="translate(585.000000, 240.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="流程监控" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">流程监控</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-18" transform="translate(322.000000, 240.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="角色管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">角色管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-23" transform="translate(454.000000, 240.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="资源维护" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">资源维护</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-19" transform="translate(322.000000, 300.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="账号管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">账号管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-24" transform="translate(454.000000, 300.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="参数管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">参数管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-28" transform="translate(585.000000, 300.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="审批历史" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">审批历史</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-11" transform="translate(190.000000, 120.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="组织管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">组织管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-12" transform="translate(190.000000, 180.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="岗位管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">岗位管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-13" transform="translate(190.000000, 240.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="员工管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">员工管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-14" transform="translate(190.000000, 300.000000)">
+                    <rect id="矩形" fill="#007AFF" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="职位变迁" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">职位变迁</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="编组-35" transform="translate(0.000000, 440.000000)">
+                <g id="编组-33备份" stroke="#DDDDDD">
+                    <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="695" height="199"></rect>
+                    <rect id="矩形" fill="#F8FBFF" x="168" y="0" width="527" height="199"></rect>
+                </g>
+                <g id="编组-21备份-17" transform="translate(289.000000, 16.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="集群管理" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">集群管理</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-22" transform="translate(487.000000, 16.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="查询引擎" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">查询引擎</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-31" transform="translate(388.000000, 16.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="日志采集" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">日志采集</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-27" transform="translate(586.000000, 16.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="表单引擎" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">表单引擎</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-29" transform="translate(585.000000, 76.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="防重放攻击" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="4" y="26">防重放攻击</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-18" transform="translate(289.000000, 76.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="单点登录" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">单点登录</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-23" transform="translate(486.000000, 76.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="防重复提交" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="4" y="26">防重复提交</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-32" transform="translate(388.000000, 76.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="导入导出" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">导入导出</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-19" transform="translate(288.000000, 136.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="工作流引擎" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="4" y="26">工作流引擎</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-24" transform="translate(487.000000, 136.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="全文检索" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">全文检索</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-33" transform="translate(388.000000, 136.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="服务总线" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">服务总线</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-28" transform="translate(586.000000, 136.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="消息引擎" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">消息引擎</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-12" transform="translate(190.000000, 16.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="报表引擎" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">报表引擎</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-13" transform="translate(190.000000, 76.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="校验引擎" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11" y="26">校验引擎</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-14" transform="translate(189.000000, 136.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="前后端加密" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="4" y="26">前后端加密</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-30" transform="translate(27.000000, 76.000000)">
+                    <rect id="矩形" fill="#C64CFD" x="0" y="0" width="122" height="48" rx="4"></rect>
+                    <text id="通用服务层" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="21.5" y="30">通用服务层</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="编组-35备份" transform="translate(0.000000, 647.000000)">
+                <g id="编组-33备份" stroke="#DDDDDD">
+                    <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="695" height="136"></rect>
+                    <rect id="矩形" fill="#F8FBFF" x="168" y="0" width="527" height="136"></rect>
+                </g>
+                <g id="编组-21备份-17" transform="translate(289.000000, 14.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="2" width="88" height="40" rx="4"></rect>
+                    <text id="Spring-Security" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="19.088" y="17">Spring</tspan>
+                        <tspan x="12.872" y="39">Security</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-22" transform="translate(487.000000, 16.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="AOP" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="26.472" y="26">AOP</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-31" transform="translate(388.000000, 16.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="Quartz" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="18.256" y="26">Quartz</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-27" transform="translate(586.000000, 14.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="2" width="88" height="40" rx="4"></rect>
+                    <text id="Spring-Data" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="19.088" y="17">Spring</tspan>
+                        <tspan x="25.568" y="39">Data</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-29" transform="translate(585.000000, 76.000000)">
+                    <rect id="矩形" fill="#FF765D" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="msg" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="28.392" y="26">msg</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-18" transform="translate(289.000000, 76.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="MyBatis" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="13.16" y="26">MyBatis</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-23" transform="translate(486.000000, 76.000000)">
+                    <rect id="矩形" fill="#FF765D" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="Batch-Jobs" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="2.232" y="26">Batch Jobs</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-32" transform="translate(388.000000, 76.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="Hibernate" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="6.92" y="26">Hibernate</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-12" transform="translate(190.000000, 14.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="2" width="88" height="40" rx="4"></rect>
+                    <text id="Spring-boot" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="19.088" y="17">Spring</tspan>
+                        <tspan x="26.096" y="39">boot</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-13" transform="translate(190.000000, 74.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="2" width="88" height="40" rx="4"></rect>
+                    <text id="Spring-core" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="19.088" y="17">Spring</tspan>
+                        <tspan x="26.576" y="39">core</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-30" transform="translate(27.000000, 44.000000)">
+                    <rect id="矩形" fill="#FF765D" x="0" y="0" width="122" height="48" rx="4"></rect>
+                    <text id="基础技术层" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="21.5" y="30">基础技术层</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="编组-35备份-2" transform="translate(0.000000, 791.000000)">
+                <g id="编组-33备份" stroke="#DDDDDD">
+                    <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="695" height="136"></rect>
+                    <rect id="矩形" fill="#F8FBFF" x="168" y="0" width="527" height="136"></rect>
+                </g>
+                <g id="编组-21备份-22" transform="translate(487.000000, 16.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="logstash" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="11.864" y="26">logstash</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-31" transform="translate(388.000000, 14.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="2" width="88" height="40" rx="4"></rect>
+                    <text id="Elastic-Search" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="18.248" y="17">Elastic</tspan>
+                        <tspan x="17.288" y="39">Search</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-27" transform="translate(586.000000, 16.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="Kinbana" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="12.856" y="26">Kinbana</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-29" transform="translate(585.000000, 76.000000)">
+                    <rect id="矩形" fill="#FFC741" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="Hive" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="27.896" y="26">Hive</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-18" transform="translate(289.000000, 76.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="My-sql" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="18.704" y="26">My sql</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-23" transform="translate(486.000000, 76.000000)">
+                    <rect id="矩形" fill="#FFC741" x="1" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="DM7" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="26.92" y="26">DM7</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-32" transform="translate(388.000000, 76.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="GaussDb" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="9.648" y="26">GaussDb</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-12" transform="translate(190.000000, 16.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="0" width="187" height="40" rx="4"></rect>
+                    <text id="redis" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="72.864" y="26">redis</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-13" transform="translate(190.000000, 76.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="0" width="88" height="40" rx="4"></rect>
+                    <text id="Oracle" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="18.776" y="26">Oracle</tspan>
+                    </text>
+                </g>
+                <g id="编组-21备份-30" transform="translate(27.000000, 44.000000)">
+                    <rect id="矩形" fill="#FFC741" x="0" y="0" width="122" height="48" rx="4"></rect>
+                    <text id="数据存储层" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="21.5" y="30">数据存储层</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="编组-21备份-3" transform="translate(168.000000, 0.000000)">
+                <rect id="矩形" stroke="#007AFF" fill="#FFFFFF" x="0" y="0" width="254" height="48" rx="4"></rect>
+                <text id="Web-端" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#000000">
+                    <tspan x="94" y="30">Web 端</tspan>
+                </text>
+            </g>
+            <g id="编组-21备份-9" transform="translate(442.000000, 0.000000)">
+                <rect id="矩形" stroke="#007AFF" fill="#FFFFFF" x="0" y="0" width="253" height="48" rx="4"></rect>
+                <text id="移动端" font-family="PingFangSC-Regular, PingFang SC" font-size="16" font-weight="normal" fill="#000000">
+                    <tspan x="97" y="30">移动端</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.1 (89650) - https://sketch.com -->
+    <title>编组 14</title>
+    <desc>Created with Sketch.</desc>
+    <g id="设计稿v1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="介绍页" transform="translate(-1210.000000, -1736.000000)">
+            <g id="优势" transform="translate(360.000000, 1539.000000)">
+                <g id="编组-3备份" transform="translate(620.000000, 151.000000)">
+                    <g id="编组-14" transform="translate(230.000000, 46.000000)">
+                        <circle id="椭圆形" fill="#F9EFFF" cx="60" cy="60" r="60"></circle>
+                        <g id="模块管理" transform="translate(31.000000, 30.000000)" fill-rule="nonzero">
+                            <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="60" height="60"></rect>
+                            <path d="M52.5,4.99999998 L35,4.99999998 C33.6192881,4.99999998 32.5,6.11928814 32.5,7.49999998 L32.5,25 C32.5,26.3807119 33.6192881,27.5 35,27.5 L52.5,27.5 C53.8807119,27.5 55,26.3807119 55,25 L55,7.49999998 C55,6.11928811 53.8807119,4.99999998 52.5,4.99999998 L52.5,4.99999998 Z M50,22.5 L37.5,22.5 L37.5,10 L50,10 L50,22.5 Z M47.5,30 L30,30 L30,12.5 C30,11.1192881 28.8807118,10 27.5,10 L7.49999998,10 C6.11928814,10 4.99999998,11.1192881 4.99999998,12.5 L4.99999998,52.5 C4.99999998,53.8807119 6.11928811,55 7.49999998,55 L47.5,55 C48.8807119,55 50,53.8807119 50,52.5 L50,32.5 C50,31.1192882 48.8807119,30 47.5,30 L47.5,30 Z M10,15 L25,15 L25,30 L10,30 L10,15 Z M10,35 L25,35 L25,50 L10,50 L10,35 Z M45,50 L30,50 L30,35 L45,35 L45,50 Z" id="形状" fill="#C64CFD"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
