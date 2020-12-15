@@ -1,5 +1,10 @@
 [
   {
+    "name": "主页",
+    "icon": "code-o",
+    "path": "/home"
+  },
+  {
     "name": "示例模块",
     "icon": "code-o",
     "path": "/example",
