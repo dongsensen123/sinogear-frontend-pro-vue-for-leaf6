@@ -4625,13 +4625,6 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-express-formidable@^1.2.0:
-  version "1.2.0"
-  resolved "http://ggjs-app-03.hnisi.com.cn:8090/express-formidable/-/express-formidable-1.2.0.tgz#6b05bc05da9e4cd712cac166fcb41ef7172b760c"
-  integrity sha1-awW8BdqeTNcSysFm/LQe9xcrdgw=
-  dependencies:
-    formidable "^1.0.17"
-
 express-http-proxy@^1.4.0:
   version "1.6.2"
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/express-http-proxy/-/express-http-proxy-1.6.2.tgz#e87152e45958cee4b91da2fdaa20a1ffd581204a"
@@ -4986,7 +4979,7 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
-formidable@^1.0.17, formidable@^1.2.2:
+formidable@^1.2.2:
   version "1.2.2"
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/formidable/-/formidable-1.2.2.tgz#bf69aea2972982675f00865342b982986f6b8dd9"
   integrity sha1-v2muopcpgmdfAIZTQrmCmG9rjdk=
@@ -9799,16 +9792,15 @@ sax@~1.2.4:
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
 
-sb-mock@^0.1.0-beta.4:
-  version "0.1.0-beta.4"
-  resolved "http://ggjs-app-03.hnisi.com.cn:8090/sb-mock/-/sb-mock-0.1.0-beta.4.tgz#d2ca791efc0c917b2cd81ef81355286b243e9c7c"
-  integrity sha512-doJ6FzyngHAiWJ/E1Gmem9WJGy07z3QaipyeHfqbUpAemflUfFeOsIYtMyPeTOewLHOO/qLExAFRRQaX89SIqQ==
+sb-mock@^0.1.0-beta.3:
+  version "0.1.0-beta.3"
+  resolved "http://ggjs-app-03.hnisi.com.cn:8090/sb-mock/-/sb-mock-0.1.0-beta.3.tgz#6c7a2f6027cac78e0b49f90cd1f4bbbc4db6babe"
+  integrity sha512-KswcsuGVTaiL4jnHpzjNNDHGMLb6dddY8fIR95/slbYmmstUTfp+kRnQgqld1BzjgOF3cqL0Tjf7GmPlUOBbdA==
   dependencies:
     chokidar "^2.0.4"
     commander "^6.1.0"
     cross-env "^7.0.2"
     express "^4.16.3"
-    express-formidable "^1.2.0"
     express-http-proxy "^1.4.0"
     http-proxy-middleware "^1.0.5"
     isobject "^3.0.1"
