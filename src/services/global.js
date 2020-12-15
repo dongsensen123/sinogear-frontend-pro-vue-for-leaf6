@@ -30,3 +30,8 @@ export async function saveUserConfig(data) {
 export async function getAvatar(url) {
   return io.get(url)
 }
+
+// 获取用户元素权限列表
+export async function getElementPermissions() {
+  return io.post(`${config.contextPath}/api/permissions/queryElementPermissions`);
+}

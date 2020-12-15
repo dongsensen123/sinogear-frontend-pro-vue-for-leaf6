@@ -4,6 +4,7 @@ import router from '../router/index'
 import {
 	queryNotices,
 	getNavMenus,
+	getElementPermissions,
 	queryVersion,
 	checkToken,
 	getUserConfig,
@@ -21,10 +22,15 @@ const actions = {
 	getMenus: async (context) => {
     const userEntity = auth.getUserEntity();
     let menus = [];
+    let elementPermissionList = [];
     if (userEntity) {
       const item = {};
       item.id = userEntity.id || '';
       menus = await getNavMenus(item);
+      elementPermissionList = await getElementPermissions();
+    }
+    if (elementPermissionList.length) {
+      sessionStorage.setItem('element-permission', JSON.stringify(elementPermissionList));
     }
     context.commit('getMenuEnd', menus || []);
 	},
