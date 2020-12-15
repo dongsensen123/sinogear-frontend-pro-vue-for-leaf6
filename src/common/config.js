@@ -8,6 +8,7 @@ const { location } = window;
 const { protocol, hostname, port } = location;
 const applicationKey = `${protocol}-${hostname}-${port}`.replace(':', '');
 import defaultTheme from '../themes/default/index';
+import extraMenus from './extraMenu.json';
 
 const defaultConfig = {
   collapsed: false, // 配置菜单是否收缩
@@ -16,6 +17,7 @@ const defaultConfig = {
   messageDuration: 2.5,
   massageMaxCount: 1,
   notificationDuration: 5,
+  extraMenus,
   // 全局设置
   globalSetting: {
     layout: 'sider-layout', // 布局

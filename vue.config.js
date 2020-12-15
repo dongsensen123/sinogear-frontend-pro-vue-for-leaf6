@@ -35,6 +35,10 @@ const options = {
 };
 
 const proxy = {
+  '/api/student': {
+    target: 'http://localhost:3004',
+    changeOrigin: true,
+  },
 	'/api/auth/password/login': {
 		target: 'http://192.168.14.45:9008',
 		changeOrigin: true,

@@ -312,6 +312,7 @@
         switch (type) {
           case 'create':
             this.item = {};
+            this.$refs.editFormRef.form.setFieldsValue({});
             this.title = '新增学生表信息';
             this.okText = '新增';
             break;

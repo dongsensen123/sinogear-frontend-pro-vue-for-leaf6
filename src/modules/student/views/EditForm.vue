@@ -61,14 +61,6 @@
     },
     data: function() {
       return {
-        validateRules: {
-          name: [{required: this.type !== 'view', message: '姓名不能为空'}],
-          cardNum: [{required: this.type !== 'view', message: '学号不能为空'}],
-          classNum: [{required: this.type !== 'view', message: '班级不能为空'}],
-          hobby: [{required: this.type !== 'view', message: '爱好不能为空'}],
-          age: [{required: this.type !== 'view', message: '年龄不能为空'}],
-          sex: [{required: this.type !== 'view', message: '性别不能为空'}],
-        },
         options: [
           { value: '男', label: '男' },
           { value: '女', label: '女' }
@@ -78,6 +70,18 @@
         formItemLayout: {
           labelCol: { span: 6 },
           wrapperCol: { span: 16 }
+        }
+      }
+    },
+    computed: {
+      validateRules(){
+        return {
+          name: [{required: this.type !== 'view', message: '姓名不能为空'}],
+          cardNum: [{required: this.type !== 'view', message: '学号不能为空'}],
+          classNum: [{required: this.type !== 'view', message: '班级不能为空'}],
+          hobby: [{required: this.type !== 'view', message: '爱好不能为空'}],
+          age: [{required: this.type !== 'view', message: '年龄不能为空'}],
+          sex: [{required: this.type !== 'view', message: '性别不能为空'}]
         }
       }
     },
