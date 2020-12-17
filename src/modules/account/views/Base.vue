@@ -129,7 +129,7 @@
       }),
       getHeaders() {
         const obj = {}
-        obj['Access-Token'] = JSON.parse(localStorage.getItem('Access-Token'))
+        obj['Access-Token'] = JSON.parse(sessionStorage.getItem('Access-Token'))
         return obj
       }
     },

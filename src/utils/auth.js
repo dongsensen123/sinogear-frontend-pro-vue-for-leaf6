@@ -80,7 +80,7 @@ const auth = {
 
   removeUserInfo() {
     store.removeItem(STORE_USER_KEY, !!store.getItem(STORE_USER_KEY, true));
-    store.removeItem('Access-Token', !!store.getItem('Access-Token', true));
+    store.removeItem('Access-Token');
     store.setItem(SessionChangeTimeKey, Date.now());
     broadcastPostStorage();
   },

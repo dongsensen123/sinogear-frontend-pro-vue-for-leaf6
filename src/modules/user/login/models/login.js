@@ -93,7 +93,7 @@ const actions = {
       searchParamsObj.captcha = payload.values.captcha;
       const result = await loginByOAuthWithPSW(searchParamsObj);
       if (result && result.map && result.map['Access-Token']) {
-        localStorage.setItem('Access-Token', JSON.stringify(result.map['Access-Token']));
+        sessionStorage.setItem('Access-Token', JSON.stringify(result.map['Access-Token']));
         await context.dispatch('loginBySSORedirect');
         if (auth.isLogin()) {
           Vue.prototype.$message.success(result.map.msg || '登陆成功');

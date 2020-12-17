@@ -1,6 +1,5 @@
 const sggc = window.SinoGearGlobalConfig;
-// const loginURL = (sggc && sggc.loginURL) || '/user/login';
-const loginURL = (sggc && sggc.loginURL) || '/login';
+const loginURL = (sggc && sggc.loginURL) || '/user/login';
 const guideURL = '/guide';
 const error401URL = '/exception/401';
 const error403URL = '/exception/403';
@@ -82,10 +81,10 @@ const defaultConfig = {
     404: { redirect: false, path: '/exception/404' },
     500: { redirect: false, path: '/exception/500' },
     504: { redirect: true, path: '/exception/401' },
-    headers: () => ({'Access-Token' : JSON.parse(localStorage.getItem('Access-Token'))})
+    headers: () => ({'Access-Token' : JSON.parse(sessionStorage.getItem('Access-Token'))})
   },
   microApp: {
-    managementEntry: '//localhost:8183/micro-app/management/'
+    managementEntry: '//localhost:9000/micro-app/management/'
   },
   // 左侧菜单前缀匹配名单，不在名单中的默认按完全匹配
   menuPrefixMatch: ['/management/area'],

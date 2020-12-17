@@ -73,7 +73,7 @@ const GlobalMenus = {
     }),
     logo() {
       if (!this.collapse || this.layout === 'header-layout') {
-        return <h1>SinoGear</h1>;
+        return <h1>SinoGear - Leaf6</h1>;
       } else {
         return null;
       }
