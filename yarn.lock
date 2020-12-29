@@ -6801,6 +6801,11 @@ lodash.clonedeep@^4.5.0:
   resolved "https://registry.npm.taobao.org/lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.compact@^3.0.1:
+  version "3.0.1"
+  resolved "http://ggjs-app-03.hnisi.com.cn:8090/lodash.compact/-/lodash.compact-3.0.1.tgz#540ce3837745975807471e16b4a2ba21e7256ca5"
+  integrity sha1-VAzjg3dFl1gHRx4WtKK6IeclbKU=
+
 lodash.defaultsdeep@^4.6.1:
   version "4.6.1"
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/lodash.defaultsdeep/-/lodash.defaultsdeep-4.6.1.tgz#512e9bd721d272d94e3d3a63653fa17516741ca6"
@@ -6830,6 +6835,16 @@ lodash.isfunction@^3.0.9:
   version "3.0.9"
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz#06de25df4db327ac931981d1bdb067e5af68d051"
   integrity sha1-Bt4l302zJ6yTGYHRvbBn5a9o0FE=
+
+lodash.isinteger@^4.0.4:
+  version "4.0.4"
+  resolved "http://ggjs-app-03.hnisi.com.cn:8090/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz#619c0af3d03f8b04c31f5882840b77b11cd68343"
+  integrity sha1-YZwK89A/iwTDH1iChAt3sRzWg0M=
+
+lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "http://ggjs-app-03.hnisi.com.cn:8090/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+  integrity sha1-1SfftUVuynzJu5XV2ur4i6VKVFE=
 
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
@@ -10069,6 +10084,19 @@ single-spa@^5.3.1:
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/single-spa/-/single-spa-5.5.5.tgz#77a947516874d50b1e1a43aa6c316b550605d4fb"
   integrity sha1-d6lHUWh01QseGkOqbDFrVQYF1Ps=
 
+sinobest-functions@^0.3.13:
+  version "0.3.13"
+  resolved "http://ggjs-app-03.hnisi.com.cn:8090/sinobest-functions/-/sinobest-functions-0.3.13.tgz#b53f0abd570b40023abc7cd25cc1a655b2d938c4"
+  integrity sha512-UC9H1Rl1lI4zOiF2FyGJ9czzDqc6gvwjSOMn3WvZ+uJFFJmSNXftBelPQ65mdKuyURs4KlMEHA5xB/S1vb81oA==
+  dependencies:
+    "@babel/polyfill" "^7.6.0"
+    lodash.compact "^3.0.1"
+    lodash.isarray "^4.0.0"
+    lodash.isinteger "^4.0.4"
+    lodash.isstring "^4.0.1"
+    lodash.uniq "^4.5.0"
+    spel2js "^0.2.7"
+
 sinobest-functions@^0.3.4:
   version "0.3.4"
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/sinobest-functions/-/sinobest-functions-0.3.4.tgz#0ae14b4872f8fc1ecd80433cf82913fb724b855e"
@@ -10284,6 +10312,11 @@ spdy@^4.0.2:
     http-deceiver "^1.2.7"
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
+
+spel2js@^0.2.7:
+  version "0.2.7"
+  resolved "http://ggjs-app-03.hnisi.com.cn:8090/spel2js/-/spel2js-0.2.7.tgz#b286e5f2aeddd19ae4ef77fa968fdca14ca28b4a"
+  integrity sha1-sobl8q7d0Zrk73f6lo/coUyii0o=
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

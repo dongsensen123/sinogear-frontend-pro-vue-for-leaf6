@@ -27,7 +27,7 @@
     "lodash.isequal": "^4.5.0",
     "lodash.isfunction": "^3.0.9",
     "qiankun": "^2.0.20",
-    "sinobest-functions": "^0.3.4",
+    "sinobest-functions": "^0.3.13",
     "sinogear-vue": "^2.0.1-beta.8",
     "tinycolor2": "^1.4.2",
     "vcolorpicker": "^1.0.1",
