@@ -6,9 +6,9 @@
       :label-col="{ xs: 24, sm: 8, md: 8, lg: 6 }"
       :wrapper-col="{ xs: 24, sm: 16, md: 16, lg: 18 }"
     >
-      <a-form-item label="登陆账号">
+      <a-form-item label="登录账号">
         <a-input
-          placeholder="请输入登陆账号"
+          placeholder="请输入登录账号"
           v-decorator="['loginName', {rules: rules.loginName}]"
         ></a-input>
       </a-form-item>
@@ -116,7 +116,7 @@
         confirmDirty: false,
         rules: {
           loginName: [
-            { required: true, message: '请输入登陆账号' },
+            { required: true, message: '请输入登录账号' },
             { max: 30, message: '长度不超过30个字符' },
             { validator: this.checkLoginNameRule }
           ],

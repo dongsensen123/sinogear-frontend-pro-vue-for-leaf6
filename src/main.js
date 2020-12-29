@@ -85,7 +85,7 @@ new Vue({
 //   headers: () => {
 //     const userInfo = store.getItem(STORE_USER_KEY, true);
 //     const headerObj = {};
-//     // 判断登陆是否过期
+//     // 判断登录是否过期
 //     if (
 //         userInfo &&
 //         moment(new Date()).diff(moment(userInfo.loginTime), 'seconds') < userInfo.validitySecondsOfRememberMe

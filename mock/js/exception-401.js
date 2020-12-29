@@ -5,7 +5,7 @@ module.exports = {
     res.status(401).send({
       timestamp: 1513932555104,
       status: 401,
-      errHint: '用户未通过认证，请先进行登陆认证。',
+      errHint: '用户未通过认证，请先进行登录认证。',
       errMsg: 'Unauthorized',
       path: '/base/category/list'
     });
@@ -14,7 +14,7 @@ module.exports = {
     res.status(401).send({
       timestamp: 1513932555104,
       status: 401,
-      errHint: '用户未通过认证，请先进行登陆认证。',
+      errHint: '用户未通过认证，请先进行登录认证。',
       errMsg: 'Unauthorized',
       path: '/base/category/list'
     });

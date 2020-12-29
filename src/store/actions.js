@@ -35,8 +35,8 @@ const actions = {
     context.commit('getMenuEnd', menus || []);
 	},
 	getUserInfo: (context) => {
-		// 用户的名字只有2种：登陆名称及用户名称
-		// 登陆名称：
+		// 用户的名字只有2种：登录名称及用户名称
+		// 登录名称：
 		//   1. currentUser.username
 		// 用户名称:
 		//   1. currentUser.name

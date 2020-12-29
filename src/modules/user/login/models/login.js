@@ -96,7 +96,7 @@ const actions = {
         sessionStorage.setItem('Access-Token', JSON.stringify(result.map['Access-Token']));
         await context.dispatch('loginBySSORedirect');
         if (auth.isLogin()) {
-          Vue.prototype.$message.success(result.map.msg || '登陆成功');
+          Vue.prototype.$message.success(result.map.msg || '登录成功');
         }
       }
       // const searchParams = new URLSearchParams();
@@ -208,7 +208,7 @@ const actions = {
     //   await logout();
     // } catch (e) {
       // FireFox使用CAS的单点登出时，会因为CAS服务器跨域被拦截出现异常的情况：response is null
-      // 登出出现异常可以直接跳转到登陆页，故仅捕获不进行处理
+      // 登出出现异常可以直接跳转到登录页，故仅捕获不进行处理
     // }
     // 调用logout成功后，才清空前端的auth认证相关信息。避免CSRF Token丢失造成调用logout失败
     auth.removeAuthInfo();

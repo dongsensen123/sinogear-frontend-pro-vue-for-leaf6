@@ -11,7 +11,7 @@
       <a-form-item label="登录账号">
         <a-input
           v-decorator="['loginName', {rules: rules.loginName}]"
-          placeholder="请输入登陆账号"
+          placeholder="请输入登录账号"
         ></a-input>
       </a-form-item>
       <a-form-item label="电子邮箱">
@@ -69,7 +69,7 @@
         updateCaptchaFlag: '',
         rules: {
           loginName: [
-            { required: true, message: '请输入登陆账号' },
+            { required: true, message: '请输入登录账号' },
             { max: 30, message: '长度不超过30个字符' }
           ],
           email: [

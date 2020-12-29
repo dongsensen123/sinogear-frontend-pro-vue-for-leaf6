@@ -6,7 +6,7 @@
       <p class="tip">检查你的邮件，点击邮箱里的链接进行密码重置</p>
       <a-row>
         <a-button type="primary" @click="toLogin">
-          返回到登陆页
+          返回到登录页
         </a-button>
       </a-row>
     </div>

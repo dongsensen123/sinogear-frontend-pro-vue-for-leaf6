@@ -25,7 +25,7 @@
           <a-menu-item key="logout">
             <span>
               <a-icon type="logout" />
-              <span>退出登陆</span>
+              <span>退出登录</span>
             </span>
           </a-menu-item>
         </a-menu>

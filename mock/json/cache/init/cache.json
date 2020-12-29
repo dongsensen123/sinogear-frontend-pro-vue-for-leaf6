@@ -12524,7 +12524,7 @@
             },
             {
               "columnName": "loginType",
-              "title": "登陆类型",
+              "title": "登录类型",
               "hidden": false,
               "showType": "all",
               "separator": ",",
