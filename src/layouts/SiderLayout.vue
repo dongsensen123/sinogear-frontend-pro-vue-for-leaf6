@@ -19,7 +19,7 @@
             :title="title"
           ></global-breadcrumb>
         </a-layout-header>
-        <a-layout-content v-if="setting.enableMultiTags" style="padding: 0">
+        <a-layout-content v-if="setting.enableMultiTags" style="padding: 0;">
           <global-tags-view
             style="background-color: #fff; margin-bottom: 16px; height: 42px;"
             :tabs="tabs"
@@ -38,8 +38,8 @@
                 transition-mode="out-in"></router-view>
             </keep-alive>
           </transition>
-          <div v-else>
-            <macro-app-layout class="subapp">
+          <div v-else style="margin: 0 16px">
+            <macro-app-layout class="subapp" ref="microApp">
             </macro-app-layout>
           </div>
         </a-layout-content>
@@ -157,12 +157,21 @@
         this.closeOtherTabs();
       },
       handleRefresh() {
-        this.isRouterAlive = !this.isRouterAlive;
-        this.exclude = this.$route.name;
-        this.$nextTick(function () {
+        if (this.$route.path.startsWith('/management')) {
+          if (this.$refs.microApp.microApp) {
+            this.$refs.microApp.microApp.unmount();
+          }
+          setTimeout(() => {
+            this.$refs.microApp.loadManagementApp();
+          }, 50)
+        } else {
           this.isRouterAlive = !this.isRouterAlive;
-          this.exclude = null;
-        })
+          this.exclude = this.$route.name;
+          this.$nextTick(function () {
+            this.isRouterAlive = !this.isRouterAlive;
+            this.exclude = null;
+          })
+        }
       },
       handleChange: function (collapse) {
         this.changeCollapse(collapse)

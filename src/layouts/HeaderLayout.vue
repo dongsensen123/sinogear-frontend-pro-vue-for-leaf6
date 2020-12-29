@@ -15,25 +15,27 @@
           @close-other="handleCloseOtherTabs"
           @refresh="handleRefresh"
         ></global-tags-view>
-        <transition v-if="showView">
-          <keep-alive :exclude="exclude">
-            <router-view
-              v-if="isRouterAlive"
-              transition
-              transition-mode="out-in"></router-view>
-          </keep-alive>
-        </transition>
+        <div v-if="showView" style="margin: 0 16px">
+          <transition>
+            <keep-alive :exclude="exclude">
+              <router-view
+                v-if="isRouterAlive"
+                transition
+                transition-mode="out-in"></router-view>
+            </keep-alive>
+          </transition>
+        </div>
         <div v-else>
-          <macro-app-layout class="subapp">
-          </macro-app-layout>
+          <macro-app-layout ref="microApp" class="subapp"></macro-app-layout>
         </div>
       </a-layout-content>
       <a-layout-content v-else :style="setting.showBreadcrumb ? {} : {margin: '16px 16px 0'}">
         <global-breadcrumb style="margin-bottom: 16px" v-if="setting.showBreadcrumb" :title="title"></global-breadcrumb>
-        <router-view
-          v-if="showView"
-          transition
-          transition-mode="out-in"></router-view>
+        <div v-if="showView" :style="setting.showBreadcrumb ? {margin: '0 16px'} : {}">
+          <router-view
+            transition
+            transition-mode="out-in"></router-view>
+        </div>
         <div v-else>
           <macro-app-layout class="subapp">
           </macro-app-layout>
@@ -87,6 +89,21 @@
       ]),
       showView: function() {
         return this.$route.path.indexOf('management') < 0;
+      },
+      transformMenus() {
+        const mapMenu = {};
+        const recursive = (list, nodePath, nameArr = []) => {
+          return list.map((item) => {
+            const { children: child, name } = item;
+            if (child && child.length) {
+              recursive(child, item.path, [...nameArr, name])
+            } else {
+              mapMenu[item.path] = [...nameArr, name];
+            }
+          });
+        };
+        recursive(this.menus);
+        return mapMenu;
       }
     },
     methods: {
@@ -114,39 +131,52 @@
         this.closeOtherTabs();
       },
       handleRefresh() {
-        this.isRouterAlive = !this.isRouterAlive;
-        this.exclude = this.$route.name;
-        this.$nextTick(function () {
+        if (this.$route.path.startsWith('/management')) {
+          if (this.$refs.microApp.microApp) {
+            this.$refs.microApp.microApp.unmount();
+          }
+          setTimeout(() => {
+            this.$refs.microApp.loadManagementApp();
+          }, 50)
+        } else {
           this.isRouterAlive = !this.isRouterAlive;
-          this.exclude = null;
-        })
+          this.exclude = this.$route.name;
+          this.$nextTick(function () {
+            this.isRouterAlive = !this.isRouterAlive;
+            this.exclude = null;
+          })
+        }
       }
     },
     mounted() {
       const arr = this.$route.path.split('/');
       let str = '';
-      const newArr = [];
-      const nameArr = [];
-      if (arr && arr.length) {
-        for (let i = 1; i < arr.length; i += 1) {
-          str = `${str}/${arr[i]}`;
-          newArr.push(str);
-        }
-      }
       this.routerData = router.getRoutes(this.$router.options.routes);
-      newArr.forEach((item) => {
-        this.routerData.every((rItem) => {
-          if (rItem.path === item) {
-            const title = rItem.meta.title || '';
-            if (title) {
-              nameArr.push(title);
-            }
-            return false;
+      if (this.transformMenus[this.$route.fullPath]) {
+        this.title = this.transformMenus[this.$route.fullPath];
+      } else {
+        const newArr = [];
+        const nameArr = [];
+        if (arr && arr.length) {
+          for (let i = 1; i < arr.length; i += 1) {
+            str = `${str}/${arr[i]}`;
+            newArr.push(str);
           }
-          return true;
+        }
+        newArr.forEach((item) => {
+          this.routerData.every((rItem) => {
+            if (rItem.path === item) {
+              const title = rItem.meta && rItem.meta.title ? rItem.meta.title : '';
+              if (title) {
+                nameArr.push(title);
+              }
+              return false;
+            }
+            return true;
+          });
         });
-      });
-      this.title = nameArr;
+        this.title = nameArr;
+      }
       let title = this.$route.meta.title;
       if (!title && this.menus && this.menus.length) {
         if (getTitle(this.menus, this.$route.fullPath)) {
@@ -161,29 +191,33 @@
     },
     watch: {
       $route: function (newVal) {
-        const arr = newVal.path.split('/');
-        let str = '';
-        const newArr = [];
-        const nameArr = [];
-        if (arr && arr.length) {
-          for (let i = 1; i < arr.length; i += 1) {
-            str = `${str}/${arr[i]}`;
-            newArr.push(str);
-          }
-        }
-        newArr.forEach((item) => {
-          this.routerData.every((rItem) => {
-            if (rItem.path === item) {
-              const title = rItem.meta.title || '';
-              if (title) {
-                nameArr.push(title);
-              }
-              return false;
+        if (this.transformMenus[newVal.fullPath]) {
+          this.title = this.transformMenus[newVal.fullPath];
+        } else {
+          const arr = newVal.path.split('/');
+          let str = '';
+          const newArr = [];
+          const nameArr = [];
+          if (arr && arr.length) {
+            for (let i = 1; i < arr.length; i += 1) {
+              str = `${str}/${arr[i]}`;
+              newArr.push(str);
             }
-            return true;
+          }
+          newArr.forEach((item) => {
+            this.routerData.every((rItem) => {
+              if (rItem.path === item) {
+                const title = rItem.meta.title || '';
+                if (title) {
+                  nameArr.push(title);
+                }
+                return false;
+              }
+              return true;
+            });
           });
-        });
-        this.title = nameArr;
+          this.title = nameArr;
+        }
         let title = newVal.meta.title;
         if (!title && getTitle(this.menus, newVal.fullPath)) {
           title = getTitle(this.menus, newVal.fullPath);
