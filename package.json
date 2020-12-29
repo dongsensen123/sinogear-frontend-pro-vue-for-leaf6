@@ -1,6 +1,6 @@
 {
-  "name": "sinogear-frontend-pro-vue",
-  "version": "0.1.0-beta.1",
+  "name": "sinogear-frontend-pro-vue-for-leaf6",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "node before.dev.js && cross-env ESLINT=none BROWSER=none RUN_ENV=dev PORT=9000 HOST=0.0.0.0 vue-cli-service serve",
