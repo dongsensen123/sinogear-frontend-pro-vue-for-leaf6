@@ -35,6 +35,7 @@ import Applications from "../modules/list/search-list/views/Applications.vue";
 import Analysis from "../modules/chart/analysis/views/Analysis.vue";
 import Monitor from "../modules/chart/monitor/views/Monitor.vue";
 import DictForm from "../modules/forms/dict-form/views/DictForm.vue";
+import MacroAppLayout from '../layouts/MacroAppLayout.vue';
 
 const routes = [
   {
@@ -45,8 +46,8 @@ const routes = [
     children: [
       {
         path: 'management*',
-        name: 'BlankLayout',
-        component: BlankLayout // 可指定任意空组件
+        name: 'MacroAppLayout',
+        component: MacroAppLayout // 可指定任意空组件
       },
       {
         path: 'home',
