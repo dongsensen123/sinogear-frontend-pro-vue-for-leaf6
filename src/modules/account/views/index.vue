@@ -69,7 +69,6 @@
     overflow: auto;
     background-color: #fff;
     padding: 16px 0;
-    margin: 0 16px;
     .left-menus{
       width: 224px;
       border-right: solid 1px #e6e6e6;

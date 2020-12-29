@@ -77,8 +77,9 @@
         <img alt="avatar" :src="imageUrl" :key="currentUser.userAvatarKey" />
       </div>
       <a-upload
+        accept="image/*"
         :key="currentUser.userAvatarKey"
-        list-type="picture"
+        listType="picture"
         :action="currentUser.uploadUserAvatarUrl || ''"
         :show-upload-list="false"
         :with-credentials="true"
