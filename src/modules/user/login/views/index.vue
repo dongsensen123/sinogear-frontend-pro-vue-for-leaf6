@@ -135,8 +135,15 @@
       handleLogin() {
         this.form.validateFields((err, values) => {
           if (!err) {
-            values.reqid = this.captchaObj.reqid;
-            this.loginByOAuthWithPSW({values, onFail: this.handleLoginFailed});
+            const loginValues = values;
+            if (config.enableLoginEncrypt) {
+              const jse = new JsEncrypt();
+              jse.setPublicKey(config.rsa_pub);
+              loginValues.username = jse.encrypt(values.username);
+              loginValues.password = jse.encrypt(values.password);
+            }
+            loginValues.reqid = this.captchaObj.reqid;
+            this.loginByOAuthWithPSW({values: loginValues, onFail: this.handleLoginFailed});
           } else {
             if (!values.captcha) {
               this.captchaVerifyStatus = 'error';
