@@ -77,13 +77,14 @@
         <img alt="avatar" :src="imageUrl" :key="currentUser.userAvatarKey" />
       </div>
       <a-upload
-        accept="image/*"
+        accept="image/*,.pdf"
         :key="currentUser.userAvatarKey"
         listType="picture"
         :action="currentUser.uploadUserAvatarUrl || ''"
         :show-upload-list="false"
         :with-credentials="true"
         :headers="getHeaders"
+        :beforeUpload="handleBeforeUpload"
         @change="handleFile"
       >
         <div class="button-view">
@@ -141,6 +142,13 @@
       ...mapActions('account', [
           'initPersonal', 'saveOrUpdate'
       ]),
+      handleBeforeUpload(file) {
+        const fileType = file.type;
+        if (!fileType.startsWith('image/')) {
+          this.$message.error('头像上传失败，不支持此文件类型');
+          return false;
+        }
+      },
       handleFile(info) {
         if (info.file.status === 'done') {
           this.changeUserAvatarKey();
