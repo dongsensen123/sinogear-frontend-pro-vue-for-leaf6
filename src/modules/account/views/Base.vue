@@ -77,7 +77,7 @@
         <img alt="avatar" :src="imageUrl" :key="currentUser.userAvatarKey" />
       </div>
       <a-upload
-        accept="image/*,.pdf"
+        accept="image/*"
         :key="currentUser.userAvatarKey"
         listType="picture"
         :action="currentUser.uploadUserAvatarUrl || ''"
