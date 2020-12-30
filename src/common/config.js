@@ -76,7 +76,7 @@ const defaultConfig = {
     isNotice: false,
     debug: false,
     // notificationFn: (error) => {console.info('调试输出notification:', error);},
-    401: { redirect: false, path: loginURL, throw: true },
+    401: { redirect: true, path: loginURL, throw: true },
     403: { redirect: false, path: error403URL },
     404: { redirect: false, path: '/exception/404' },
     500: { redirect: false, path: '/exception/500' },
