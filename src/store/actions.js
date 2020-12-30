@@ -137,6 +137,9 @@ const actions = {
     auth.removeAuthInfo();
     auth.removeUserInfo();
     context.commit('getAvatarEnd', '');
+    const currentTab = '/home';
+    const tabs = [{name: 'HomeContainer', title: '主页', fullPath: '/home', path: '/home'}];
+    context.commit('handleTabsChange', { currentTab, tabs });
 	},
 	redirectAfterSessionChange: (context) => {
     setTimeout(() => {
