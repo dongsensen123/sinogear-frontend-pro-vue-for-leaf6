@@ -9814,16 +9814,17 @@ sax@~1.2.4:
   resolved "http://ggjs-app-03.hnisi.com.cn:8090/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
 
-sb-mock@^0.1.0-beta.3:
-  version "0.1.0-beta.3"
-  resolved "http://ggjs-app-03.hnisi.com.cn:8090/sb-mock/-/sb-mock-0.1.0-beta.3.tgz#6c7a2f6027cac78e0b49f90cd1f4bbbc4db6babe"
-  integrity sha512-KswcsuGVTaiL4jnHpzjNNDHGMLb6dddY8fIR95/slbYmmstUTfp+kRnQgqld1BzjgOF3cqL0Tjf7GmPlUOBbdA==
+sb-mock@0.1.0-beta.5:
+  version "0.1.0-beta.5"
+  resolved "http://ggjs-app-03.hnisi.com.cn:8090/sb-mock/-/sb-mock-0.1.0-beta.5.tgz#f85f88a5a4ff229b053961c37bcd2e20b8206516"
+  integrity sha512-KywFQ9HX2jI47/gSBHOG9ST6maSz4eG0cmQA89bmk1p2W6eXTmUNcT6HPSbI6tHxbMTXp0Y3ecgJLP0poIP4yA==
   dependencies:
     chokidar "^2.0.4"
     commander "^6.1.0"
     cross-env "^7.0.2"
     express "^4.16.3"
     express-http-proxy "^1.4.0"
+    formidable "^1.2.2"
     http-proxy-middleware "^1.0.5"
     isobject "^3.0.1"
     json-server "^0.12.1"

@@ -16,6 +16,7 @@ import { config } from './common/config';
 import vcolorpicker from 'vcolorpicker'
 import { io, cache, router as sgRouter } from 'sinobest-functions';
 import cssVars from 'css-vars-ponyfill';
+import Viser from 'viser-vue';
 import { handleNotificationError } from './utils/func';
 
 cssVars({ watch: true, silent: true});
@@ -33,6 +34,7 @@ Vue.prototype.$message = message;
 Vue.prototype.$notification = notification;
 
 Vue.use(vcolorpicker);
+Vue.use(Viser);
 Vue.use(Modal);
 Vue.use(Drawer);
 
