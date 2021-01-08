@@ -32,39 +32,43 @@ const getRoutes = (routerData, path = '', newRouterData = []) => {
 
 router.beforeEach(async (to, from, next) => {
   const routerData = getRoutes(router.options.routes);
-  if (routerData.indexOf (to.path) === -1
-      && to.path.indexOf('/management') < 0) { // TODO 写死的路径
-    next('/exception/404');
+  if (store.state.login.forceUpdatePassword && to.path !== '/user/update-expired-password') {
+    next('/user/update-expired-password');
   } else {
-    if (to.path.indexOf('user') > -1 || to.path === config.guideUrl) {
-      next();
+    if (routerData.indexOf (to.path) === -1
+      && to.path.indexOf('/management') < 0) { // TODO 写死的路径
+      next('/exception/404');
     } else {
-      const params = from.query;
-      let tokenVerification = false;
-      if (JSON.stringify(params) !== '{}') {
-        for (const key in params) {
-          if (key.indexOf('access_token') > -1) {
-            await store.dispatch('loginByToken', params[key]);
-            tokenVerification = true;
-          }
-        }
-      }
-      let authCheckRedirectUrl = null;
-      auth.checkAuth({
-        currentLocation: to,
-        onFailure: ({ redirectUrl }) => {
-          authCheckRedirectUrl = redirectUrl;
-        }
-      });
-      // 第三方http登录页
-      if (authCheckRedirectUrl !== null && authCheckRedirectUrl.startsWith('http')) {
-        window.location.href = authCheckRedirectUrl;
-        return null;
-      }
-      if ((tokenVerification && !store.state.validTokenSuccess) || authCheckRedirectUrl === null){
+      if (to.path.indexOf('user') > -1 || to.path === config.guideUrl) {
         next();
       } else {
-        next(authCheckRedirectUrl)
+        const params = from.query;
+        let tokenVerification = false;
+        if (JSON.stringify(params) !== '{}') {
+          for (const key in params) {
+            if (key.indexOf('access_token') > -1) {
+              await store.dispatch('loginByToken', params[key]);
+              tokenVerification = true;
+            }
+          }
+        }
+        let authCheckRedirectUrl = null;
+        auth.checkAuth({
+          currentLocation: to,
+          onFailure: ({ redirectUrl }) => {
+            authCheckRedirectUrl = redirectUrl;
+          }
+        });
+        // 第三方http登录页
+        if (authCheckRedirectUrl !== null && authCheckRedirectUrl.startsWith('http')) {
+          window.location.href = authCheckRedirectUrl;
+          return null;
+        }
+        if ((tokenVerification && !store.state.validTokenSuccess) || authCheckRedirectUrl === null){
+          next();
+        } else {
+          next(authCheckRedirectUrl)
+        }
       }
     }
   }

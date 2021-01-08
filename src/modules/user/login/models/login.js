@@ -15,7 +15,8 @@ import store from '../../../../store/index';
 import Vue from 'vue';
 
 const state = {
-  LOGIN_LOADING: false
+  LOGIN_LOADING: false,
+  forceUpdatePassword: false
 };
 
 const getters = {
@@ -25,6 +26,9 @@ const getters = {
 const mutations = {
   SET_LOGIN_LOADING: (state, payload) => {
     state.LOGIN_LOADING = payload;
+  },
+  setForceUpdatePasswordStatus: (state, payload) => {
+    state.forceUpdatePassword = payload;
   }
 };
 
@@ -79,12 +83,6 @@ const actions = {
   },
   loginByOAuthWithPSW: async (context, payload) => {
     try {
-      // let searchParamsStr = '';
-      // searchParamsStr = url.appendParams('client_id', psw.client_id, searchParamsStr);
-      // searchParamsStr = url.appendParams('client_secret', psw.client_secret, searchParamsStr);
-      // searchParamsStr = url.appendParams('grant_type', psw.grant_type, searchParamsStr);
-      // searchParamsStr = url.appendParams('username', payload.username, searchParamsStr);
-      // searchParamsStr = url.appendParams('password', payload.password, searchParamsStr);
       // TODO 微服务接口代码
       const searchParamsObj = {};
       searchParamsObj.username = payload.values.username;
@@ -99,29 +97,16 @@ const actions = {
           Vue.prototype.$message.success(result.map.msg || '登录成功');
         }
       }
-      // const searchParams = new URLSearchParams();
-      // searchParams.append('client_id', config.loginAuth.psw.client_id);
-      // searchParams.append('client_secret', config.loginAuth.psw.client_secret);
-      // searchParams.append('grant_type', config.loginAuth.psw.grant_type);
-      // searchParams.append('username', payload.username);
-      // searchParams.append('password', payload.password);
-      // const result = await loginByOAuthWithPSW(searchParamsStr);
-      // if (result && result.access_token) {
-      //   if ('userInfo' in result) delete result.userInfo;
-      //   auth.setAuthInfo(result);
-      //   if (result.userInfo && result.userInfo.loginUserDTO && result.userInfo.loginUserDTO.id) {
-      //     auth.setUserInfo(result.userInfo);
-      //     await context.dispatch('redirectAfterLogin');
-      //   } else {
-      //     Vue.prototype.$message.error('登录成功，获取用户id信息失败!');
-      //   }
-      // } else {
-      //   Vue.prototype.$message.error('用户名或密码错误，或用户被禁用，登录失败!');
-      // }
     } catch (error) {
       payload.onFail();
-      Vue.prototype.$message.error(`用户名或密码错误，或用户被禁用，登录失败! ${error.msg}`);
-      throw error;
+      if (error && error.appcode === '2') {
+        context.commit('setForceUpdatePasswordStatus', true);
+        Vue.prototype.$message.error(error.msg);
+        router.push('/user/update-expired-password');
+      } else {
+        Vue.prototype.$message.error(`用户名或密码错误，或用户被禁用，登录失败! ${error.msg}`);
+        throw error;
+      }
     }
   },
   loginByOAuthWithProxyPSW: async (context, payload) => {

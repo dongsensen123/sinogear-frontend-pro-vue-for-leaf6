@@ -4,6 +4,7 @@ import GuideContainer from '../modules/guide/views/index.vue';
 import LoginContainer from '../modules/user/login/views/index.vue';
 import RegisterContainer from '../modules/user/register/views/index.vue';
 import ForgotPassword from '../modules/user/password/forgot-password/views/index.vue';
+import UpdateExpiredPassword from '../modules/user/password/update-expired-password/views/index.vue';
 import StudentContainer from '../modules/student/views/index.vue';
 import LayoutContainer from '../layouts/Layout.vue';
 import Exception404 from '../modules/exception/views/404.vue';
@@ -15,7 +16,6 @@ import BaseContainer from '../modules/account/views/Base.vue';
 import NotificationContainer from '../modules/account/views/Notification.vue';
 import UpdatePassword from '../modules/account/views/UpdatePassword.vue';
 import UserStatus from '../modules/account/views/UserStatus.vue';
-import BlankLayout from '../layouts/BlankLayout.vue';
 import DemoHome from '../modules/example/demo/views/index.vue';
 import EditorDemo from '../modules/example/demo/editor/views/index.vue';
 import CacheDemo from '../modules/example/demo/cache/views/index.vue';
@@ -126,6 +126,14 @@ const routes = [
         name: 'ForgotPassword',
         meta: {
           layout: 'login-layout'
+        }
+      },
+      {
+        path: 'user/update-expired-password',
+        component: UpdateExpiredPassword,
+        name: 'UpdateExpiredPassword',
+        meta: {
+          layout: 'blank-layout'
         }
       },
       {
