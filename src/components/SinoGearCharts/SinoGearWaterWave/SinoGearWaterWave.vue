@@ -62,6 +62,16 @@
         </div>
       `,
       };
+    },
+    watch: {
+      percent: function (newVal) {
+        this.htmlGuideHtml = `
+        <div style="text-align: center;">
+          <p style="font-size: 14px;color: #00000073;margin: 0;">${this.title}</p>
+          <p style="font-size: 24px;color: rgb(24 134 249);margin: 0;">${newVal}%</p>
+        </div>
+      `
+      }
     }
   };
 </script>
