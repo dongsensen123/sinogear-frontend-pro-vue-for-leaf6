@@ -303,13 +303,22 @@ export const store = {
 };
 
 export function handleNotificationError(err, message, description) {
-  if ((err?.extraCode && err.extraCode !== 'sg_error_401') || (!err || (err.extraCode && err.extraCode !== 'sg_error_401'))) {
+  if (err?.extraCode) {
+    if (err.extraCode === 'sg_error_401') {
+      Vue.prototype.$message.error('登录超时，请重新登录');
+    } else if (err.extraCode === 'sg_error_403') {
+      Vue.prototype.$message.error('您没有访问权限，请联系系统管理员分配权限');
+    } else {
+      Vue.prototype.$notification.error({
+        message,
+        description,
+      })
+    }
+  } else {
     Vue.prototype.$notification.error({
       message,
       description,
     })
-  } else if (err?.extraCode && err.extraCode === 'sg_error_401') {
-    Vue.prototype.$message.error('请求被拒绝访问，请先进行登录认证');
   }
 }
 
