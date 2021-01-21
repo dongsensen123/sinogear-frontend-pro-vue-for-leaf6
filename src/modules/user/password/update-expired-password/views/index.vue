@@ -4,11 +4,17 @@
       :form="form"
       :hide-required-mask="true"
     >
+      <a-form-item label="登录名：" v-bind="formItemLayout">
+        <a-input
+          placeholder="请输入登录名"
+          v-decorator="['loginName', {rules: rules.loginName}]"
+        ></a-input>
+      </a-form-item>
       <a-form-item label="原密码：" v-bind="formItemLayout">
         <a-input
           type="password"
           placeholder="请输入原密码"
-          v-decorator="['oldPassword', {rules: rules.oldPassword}]"
+          v-decorator="['originalPassword', {rules: rules.originalPassword}]"
         ></a-input>
       </a-form-item>
       <a-form-item label="新密码：" v-bind="formItemLayout">
@@ -50,7 +56,8 @@
       const passwordRules = { pattern: passwordRegExp, message: '请输入正确格式的密码,8-20位数字字母组合!' };
       return {
         rules: {
-          oldPassword: [{ required: true, message: '请输入原密码' }],
+          loginName: [{ required: true, message: '请输入登录名' }],
+          originalPassword: [{ required: true, message: '请输入原密码' }],
           newPassword: [
             { required: true, message: '请输入新密码' },
             passwordRules
@@ -85,11 +92,12 @@
             if (values.newPassword !== values.confirmPassword) {
               this.$message.error('新密码与确认密码不一致！');
               return;
-            } else if (values.oldPassword === values.newPassword) {
-              this.$message.error('新密码不能与旧密码一致！')
+            } else if (values.originalPassword === values.newPassword) {
+              this.$message.error('新密码不能与原密码一致！')
             } else {
               const data = {
-                originalPassword: values.oldPassword,
+                loginName: values.loginName,
+                originalPassword: values.originalPassword,
                 newPassword: values.newPassword,
                 confirmPassword: values.confirmPassword
               };

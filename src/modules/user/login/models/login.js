@@ -101,7 +101,7 @@ const actions = {
       payload.onFail();
       if (error && error.appcode === '2') {
         context.commit('setForceUpdatePasswordStatus', true);
-        Vue.prototype.$message.error(error.msg);
+        Vue.prototype.$message.error('登录密码已过期，请修改密码');
         router.push('/user/update-expired-password');
       } else {
         Vue.prototype.$message.error(`用户名或密码错误，或用户被禁用，登录失败! ${error.msg}`);
