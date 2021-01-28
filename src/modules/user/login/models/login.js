@@ -105,9 +105,9 @@ const actions = {
         router.push('/user/update-expired-password');
       } else {
         if (error.msg) {
-          Vue.prototype.$message.error('用户名或密码错误，或用户被禁用，登录失败!');
-        } else {
           Vue.prototype.$message.error(error.msg);
+        } else {
+          Vue.prototype.$message.error('用户名或密码错误，或用户被禁用，登录失败!');
         }
         throw error;
       }
