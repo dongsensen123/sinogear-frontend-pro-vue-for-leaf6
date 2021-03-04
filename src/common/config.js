@@ -39,7 +39,7 @@ const defaultConfig = {
   // 是否开启菜单访问权限控制
   enableMenuAccessControl: false,
   // 是否开启验证码功能
-  enableCaptcha: true,
+  enableCaptcha: false,
   // 是否开启账号注册功能
   enableRegister: true,
   // 是否开启重置密码功能
@@ -54,6 +54,8 @@ const defaultConfig = {
   enableAssignByPagePermissionRecursively: true,
   // 是否开启用户个性化设置
   enableUserConfig: false,
+  // 是否开启页面元素权限鉴权
+  enableElementPermissions: false,
   whitePages: [loginURL, error401URL, error403URL, guideURL],
   error401Url: error401URL,
   error403Url: error403URL,
@@ -76,7 +78,7 @@ const defaultConfig = {
     isNotice: false,
     debug: false,
     // notificationFn: (error) => {console.info('调试输出notification:', error);},
-    401: { redirect: true, path: loginURL, throw: true },
+    401: { redirect: false, path: loginURL, throw: true },
     403: { redirect: false, path: error403URL },
     404: { redirect: false, path: '/exception/404' },
     500: { redirect: false, path: '/exception/500' },
@@ -84,7 +86,7 @@ const defaultConfig = {
     headers: () => ({'Access-Token' : JSON.parse(sessionStorage.getItem('Access-Token'))})
   },
   microApp: {
-    managementEntry: '//localhost:9000/micro-app/management/'
+    managementEntry: '//192.168.6.145:8183/micro-app/management/'
   },
   // 左侧菜单前缀匹配名单，不在名单中的默认按完全匹配
   menuPrefixMatch: ['/management/area'],

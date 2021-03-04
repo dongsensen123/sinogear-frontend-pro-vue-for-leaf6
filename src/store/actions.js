@@ -27,12 +27,14 @@ const actions = {
       const item = {};
       item.id = userEntity.id || '';
       menus = await getNavMenus(item);
+      context.commit('getMenuEnd', menus || []);
+    }
+    if (config.enableElementPermissions && userEntity) {
       elementPermissionList = await getElementPermissions();
+      if (elementPermissionList && elementPermissionList.length) {
+        sessionStorage.setItem('element-permission', JSON.stringify(elementPermissionList));
+      }
     }
-    if (elementPermissionList.length) {
-      sessionStorage.setItem('element-permission', JSON.stringify(elementPermissionList));
-    }
-    context.commit('getMenuEnd', menus || []);
 	},
 	getUserInfo: (context) => {
 		// 用户的名字只有2种：登录名称及用户名称
