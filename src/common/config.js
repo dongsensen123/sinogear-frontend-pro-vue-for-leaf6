@@ -70,7 +70,8 @@ const defaultConfig = {
     '/trigger/exception'
   ],
   store_keys: {
-    store_user_key: 'user_info'
+    store_user_key: 'user_info',
+    store_token_key: 'Access-Token'
   },
   // 全局请求配置
   requestConfig: {

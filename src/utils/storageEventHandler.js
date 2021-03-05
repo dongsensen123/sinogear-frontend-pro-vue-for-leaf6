@@ -1,6 +1,6 @@
 import { config } from '../common/config';
 
-const { store_user_key: STORE_USER_KEY } = config.store_keys;
+const { store_user_key: STORE_USER_KEY, store_token_key: STORE_TOKEN_KEY } = config.store_keys;
 const { location } = window;
 const systemId = `${location.protocol}-${location.hostname}-${location.port}-${config.name}`;
 // 获取拼接字符串的hash值，取消注释，使用hash值替代拼接字符串
@@ -14,7 +14,7 @@ const BroadcastPostSessionStorageKey = `${appID}_broadcastPostSessionStorage`;
 const SessionChangeTimeKey = `${appID}_sessionChangeTime`;
 const SessionChangeEventName = 'SessionChangeEventName';
 
-const CopyKeys = [SessionChangeTimeKey, STORE_USER_KEY];
+const CopyKeys = [SessionChangeTimeKey, STORE_USER_KEY, STORE_TOKEN_KEY];
 // 广播获取其它标签的sessionStorage
 const broadcastGetStorage = () => {
   localStorage.setItem(BroadcastGetSessionStorageKey, Date.now());

@@ -151,8 +151,10 @@ const actions = {
           context.dispatch('getInfosAfterLogin');
           router.push(url.getFromParam());
         } else {
-          context.dispatch('getInfosAfterLogin');
+          context.dispatch('login/redirectAfterLogin');
         }
+      } else {
+        router.push(config.loginUrl);
       }
     }, 0)
 	},

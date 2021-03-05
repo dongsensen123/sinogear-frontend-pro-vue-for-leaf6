@@ -13,7 +13,7 @@
   import { Icon, ConfigProvider } from 'ant-design-vue';
   import { mapActions, mapState } from 'vuex';
   import { config } from '../common/config';
-  import { getSessionFromOthers } from '../utils/storageEventHandler';
+  import { getSessionFromOthers, SessionChangeEventName } from '../utils/storageEventHandler';
   import { auth } from '../utils/auth'
   import SiderLayout from './SiderLayout.vue';
   import HeaderLayout from './HeaderLayout.vue';
@@ -78,11 +78,18 @@
       this.isSessionInit = false;
       await getSessionFromOthers();
       this.isSessionInit = true;
-      this.redirectAfterSessionChange();
+      const self = this;
+      document.addEventListener(SessionChangeEventName, () => {
+        self.redirectAfterSessionChange();
+      })
       window.addEventListener('message', this.handleChildApplicationMessage);
     },
     beforeDestroy: function() {
+      const self = this;
       window.removeEventListener('message', this.handleChildApplicationMessage);
+      document.removeEventListener(SessionChangeEventName, () => {
+        self.redirectAfterSessionChange();
+      });
     }
   }
 </script>
