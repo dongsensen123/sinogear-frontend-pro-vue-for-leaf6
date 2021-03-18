@@ -35,22 +35,22 @@ const options = {
 };
 
 const proxy = {
-  '/api/student': {
-    target: 'http://localhost:3004',
-    changeOrigin: true,
-  },
 	'/api/auth/password/login': {
-		target: 'http://192.168.14.45:9008',
+		target: 'http://192.168.14.103:9008',
 		changeOrigin: true,
 	},
 	'/captcha/render': {
-		target: 'http://192.168.14.45:9008',
+		target: 'http://192.168.14.103:9008',
 		changeOrigin: true,
     },
 	'/api': {
-		target: 'http://192.168.14.45:9008/leaf6-uni-cloud-uc-service', // 需改为真实后端
+		target: 'http://192.168.14.103:9008/leaf6-uni-cloud-uc-service', // 需改为真实后端
 		changeOrigin: true,
 	},
+	'/api/micro-app/management': {
+        target: 'http://192.168.13.100:8020', // 子应用[系统管理]后端接口地址, 根据实际情况按需配置, 如与主应用后端接口相同前缀，可不配置
+        changeOrigin: true
+    },
 };
 
 const hash = process.env.NODE_ENV === 'production' ? 'chunkhash:8' : 'hash:8';

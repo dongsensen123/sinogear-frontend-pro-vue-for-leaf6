@@ -87,7 +87,7 @@ const defaultConfig = {
     headers: () => ({'Access-Token' : JSON.parse(sessionStorage.getItem('Access-Token'))})
   },
   microApp: {
-    managementEntry: '//192.168.6.145:8183/micro-app/management/'
+    managementEntry: '//192.168.13.100:8020/micro-app/management/'
   },
   // 左侧菜单前缀匹配名单，不在名单中的默认按完全匹配
   menuPrefixMatch: ['/management/area'],
