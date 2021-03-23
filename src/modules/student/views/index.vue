@@ -51,15 +51,15 @@
             :xl="colResponsiveProps.xl"
           >
             <a-form-item label="性别：">
-              <a-select v-decorator="['sex', {initialValue: queryParams.sex}]" placeholder="请输入性别">
-                <a-select-option
-                  v-for="item in options"
-                  :key="item.value"
-                  :value="item.value"
-                >
-                  {{ item.label }}
-                </a-select-option>
-              </a-select>
+              <sinogear-dict-select
+                v-decorator="[
+                  'sex',
+                  { rules: [{ required: true, message: '请输入经验年份' }] },
+                ]"
+                placeholder="请输入性别"
+                @change="handleChange"
+                :options="dicts.XB"
+              />
             </a-form-item>
           </a-col>
           <a-col
@@ -183,7 +183,7 @@
 
 <script>
   import { mapActions, mapState } from 'vuex';
-  import { SinogearTable } from 'sinogear-vue';
+  import { SinogearTable, SinogearDictSelect } from 'sinogear-vue';
   
   import {
     Popconfirm,
@@ -224,7 +224,11 @@
       ACol: Col,
       ARow: Row,
       AInput: Input,
-      SinogearTable
+      SinogearTable,
+      SinogearDictSelect
+    },
+    mounted() {
+      this.initDicts();
     },
     data: function () {
       return {
@@ -238,11 +242,7 @@
           lg: 8,
           xl: 8
         },
-        options: [
-          { value: '男', label: '男' },
-          { value: '女', label: '女' },
-          { value: '', label: '全部' }
-        ],
+        dicts: {},
         collapse: false,
         columns: [
           {dataIndex: 'name', title: '姓名', scopedSlots: { customRender: 'name' }, visible: true},
@@ -282,8 +282,18 @@
     },
     methods: {
       ...mapActions('student', [
-       'deleteData', 'addData', 'editData', 'getStudentConfig', 'updateQueryConditionsAndQueryData'
+       'deleteData', 'addData', 'editData', 'getStudentConfig', 'updateQueryConditionsAndQueryData','getDictItems'
       ]),
+       initDicts() {
+      this.getDictItems("XB,WHCD")
+        .then((res) => {
+          console.info(res);
+          this.dicts = res.map.data;
+        })
+        .catch((err) => {
+          console.info(err);
+        });
+    },
       handleTablePaginationChange(pagination) {
         const newPagination = Object.assign({}, this.pagination, {...pagination, page: pagination.current});
         this.updateQueryConditionsAndQueryData({queryParams: {operations: this.operations, ...this.form.getFieldsValue()}, pagination: newPagination})

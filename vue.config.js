@@ -35,6 +35,10 @@ const options = {
 };
 
 const proxy = {
+	'^/leaf6-example-service': {
+		target: 'http://192.168.14.103:9008',
+		changeOrigin: true,
+	},
 	'/api/auth/password/login': {
 		target: 'http://192.168.14.103:9008',
 		changeOrigin: true,
@@ -43,7 +47,7 @@ const proxy = {
 		target: 'http://192.168.14.103:9008',
 		changeOrigin: true,
     },
-	'/api': {
+	'^/api': {
 		target: 'http://192.168.14.103:9008/leaf6-uni-cloud-uc-service', // 需改为真实后端
 		changeOrigin: true,
 	},

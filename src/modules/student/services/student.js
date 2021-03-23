@@ -2,6 +2,15 @@ import { config } from '../../../common/config';
 import { io } from 'sinobest-functions';
 
 /**
+ * 获取字典项
+ * @param {string} kindcodes 字典类型
+ * @return {Promise.<void>} 返回数据
+ */
+ export async function getDictItems(kindcodes) {
+  return io.get(`${config.contextPath}/leaf6-example-service/api/appcomm/v1/dicts/items?dictkinds=${kindcodes}`);
+}
+
+/**
  * 查询全部数据
  * @param {Object} queryConditions 请求的查询条件
  * @param {number} pageSize 分页信息 pageSize

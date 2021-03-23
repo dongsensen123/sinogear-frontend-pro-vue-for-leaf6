@@ -4,7 +4,8 @@ import {
   handleEditData,
   handleDeleteData,
   getStudentConfig,
-  saveStudentConfig
+  saveStudentConfig,
+  getDictItems
 } from "../services/student";
 import Vue from 'vue';
 
@@ -37,6 +38,10 @@ const mutations = {
 };
 
 const actions = {
+  getDictItems: async (context, payload) => {
+    const data = await getDictItems(payload);
+    return data
+  },
   queryData: async (context, payload) => {
     const { queryParams, pagination } = payload;
     const obj = {};
