@@ -54,10 +54,9 @@
               <sinogear-dict-select
                 v-decorator="[
                   'sex',
-                  { rules: [{ required: true, message: '请输入经验年份' }] },
+                  { rules: [{message: '请输入性别' }] },
                 ]"
                 placeholder="请输入性别"
-                @change="handleChange"
                 :options="dicts.XB"
               />
             </a-form-item>
