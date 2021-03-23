@@ -269,7 +269,7 @@
     computed: {
       ...mapState('student', {
         pagination: state => Object.assign({}, state.pagination),
-        data: state => state.data,
+        data: state => state.map.data.rows,
         studentConfig: state => state.studentConfig
       }),
       studentForm() {
@@ -281,7 +281,7 @@
     },
     methods: {
       ...mapActions('student', [
-       'deleteData', 'addData', 'editData', 'getStudentConfig', 'updateQueryConditionsAndQueryData','getDictItems'
+       'queryData','deleteData', 'addData', 'editData', 'getDictItems'
       ]),
        initDicts() {
       this.getDictItems("XB,WHCD")
@@ -295,7 +295,7 @@
     },
       handleTablePaginationChange(pagination) {
         const newPagination = Object.assign({}, this.pagination, {...pagination, page: pagination.current});
-        this.updateQueryConditionsAndQueryData({queryParams: {operations: this.operations, ...this.form.getFieldsValue()}, pagination: newPagination})
+        this.queryData({queryParams: this.form.getFieldsValue(), pagination: newPagination})
       },
       handleColChange(type, value) {
         if (type === 'setting'){
@@ -303,15 +303,14 @@
         } else {
           this.operations = Object.assign({}, this.operations, { colHeightMode: value })
         }
-        this.updateQueryConditionsAndQueryData({queryParams: { operations: this.operations, ...this.form.getFieldsValue() }, pagination: this.pagination});
+        this.queryData({queryParams: this.form.getFieldsValue(), pagination: this.pagination});
       },
       handleQuery() {
-        this.updateQueryConditionsAndQueryData({queryParams: {operations: this.operations, ...this.form.getFieldsValue()}, pagination: {page: 1, pageSize: 10}})
+        this.queryData({queryParams: this.form.getFieldsValue(), pagination: this.pagination})
       },
       handleReset() {
         this.form.resetFields();
-        const operations = { colHeightMode: true, fullScreen: true, reload: true, colSetting: true };
-        this.updateQueryConditionsAndQueryData({queryParams: {operations, ...this.form.getFieldsValue()}, pagination: {page: 1, pageSize: 10}});
+        this.queryData({queryParams: {}, pagination: this.pagination});
       },
       handleDeleteClick(val) {
         const id = val.id;
@@ -321,7 +320,7 @@
         switch (type) {
           case 'create':
             this.item = {};
-            this.$refs.editFormRef.form.setFieldsValue({});
+            //this.$refs.editFormRef.form.setFieldsValue({});
             this.title = '新增学生表信息';
             this.okText = '新增';
             break;
