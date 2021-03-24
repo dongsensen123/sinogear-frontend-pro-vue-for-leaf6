@@ -9,7 +9,7 @@
         </a-col>
         <a-col :span="12">
           <a-form-item label="学号：">
-            <a-input :disabled="type === 'view'" v-decorator="['cardNum', {rules: validateRules.cardNum, initialValue: formData.cardNum}]" placeholder="请输入学号"></a-input>
+            <a-input :disabled="type === 'view'" v-decorator="['cardnum', {rules: validateRules.cardnum, initialValue: formData.cardnum}]" placeholder="请输入学号"></a-input>
           </a-form-item>
         </a-col>
       </a-row>
@@ -28,7 +28,7 @@
         </a-col>
         <a-col :span="12">
           <a-form-item label="班级：">
-            <a-input :disabled="type === 'view'" v-decorator="['classNum',  {rules: validateRules.classNum, initialValue: formData.classNum}]" placeholder="请输入班级"></a-input>
+            <a-input :disabled="type === 'view'" v-decorator="['classnum',  {rules: validateRules.classnum, initialValue: formData.classnum}]" placeholder="请输入班级"></a-input>
           </a-form-item>
         </a-col>
       </a-row>
@@ -62,8 +62,8 @@
     data: function() {
       return {
         options: [
-          { value: '男', label: '男' },
-          { value: '女', label: '女' }
+          { value: '1', label: '男' },
+          { value: '2', label: '女' }
         ],
         data: Object.assign({}, this.formData),
         form: this.$form.createForm(this, {name: 'StudentEditForm'}),
@@ -77,8 +77,8 @@
       validateRules(){
         return {
           name: [{required: this.type !== 'view', message: '姓名不能为空'}],
-          cardNum: [{required: this.type !== 'view', message: '学号不能为空'}],
-          classNum: [{required: this.type !== 'view', message: '班级不能为空'}],
+          cardnum: [{required: this.type !== 'view', message: '学号不能为空'}],
+          classnum: [{required: this.type !== 'view', message: '班级不能为空'}],
           hobby: [{required: this.type !== 'view', message: '爱好不能为空'}],
           age: [{required: this.type !== 'view', message: '年龄不能为空'}],
           sex: [{required: this.type !== 'view', message: '性别不能为空'}]

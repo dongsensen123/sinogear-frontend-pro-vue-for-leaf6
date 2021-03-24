@@ -33,7 +33,6 @@ const actions = {
     commit('CHANGE_NAME', payload);
   },
   queryData: async (context, payload) => {
-    console.debug(payload);
     const { queryParams, pagination } = payload;
     const actionPayload = { queryConditions: queryParams, pagination };
     return handleQueryData(actionPayload);
@@ -46,19 +45,14 @@ const actions = {
    * @return {null} 无返回
    */
   deleteData: async (context, payload) => {
-    await handleDeleteData({ id: payload.id });
-    await handleQueryData(payload);
+    await handleDeleteData(payload);
   },
   /**
    * 新增数据
    * @return {null} 无返回
    */
   addData: async (context, payload) => {
-    await handleAddData({ item: { ...payload.item } });
-    await handleQueryData(payload);
-    if (payload.callback) {
-      payload.callback();
-    }
+    await handleAddData(payload);
   },
   
   /**
@@ -66,12 +60,7 @@ const actions = {
    * @return {null} 无返回
    */
   editData: async (context, payload) => {
-    const { item } = payload;
-    await handleEditData({ item, id: item.id });
-    await handleQueryData(payload);
-    if (payload.callback) {
-      payload.callback();
-    }
+    await handleEditData(payload);
   }
 };
 

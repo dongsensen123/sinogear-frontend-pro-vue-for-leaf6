@@ -38,8 +38,8 @@ export async function handleQueryDataById({ id }) {
  * @param {Object} item 请求的参数
  * @return {Promise.<void>} 返回请求数据结果
  */
-export async function handleAddData({ item }) {
-  return io.post(`${config.contextPath}/api/students`, item);
+export async function handleAddData(item) {
+  return io.post(`${config.contextPath}/leaf6-example-service/api/student/v1/`, item);
 }
 
 /**
@@ -48,8 +48,8 @@ export async function handleAddData({ item }) {
  * @param {string} id 请求id
  * @return {Promise.<void>} 返回请求数据结果
  */
-export async function handleEditData({ item, id }) {
-  return io.put(`${config.contextPath}/api/students/${id}`, item);
+export async function handleEditData(item) {
+  return io.put(`${config.contextPath}/leaf6-example-service/api/student/v1/`, item);
 }
 
 /**
@@ -57,8 +57,8 @@ export async function handleEditData({ item, id }) {
  * @param {string} id 请求id
  * @return {Promise.<void>} 返回请求数据结果
  */
-export async function handleDeleteData({ id }) {
-  return io.delete(`${config.contextPath}/api/students/${id}`);
+export async function handleDeleteData(id) {
+  return io.delete(`${config.contextPath}/leaf6-example-service/api/student/v1/?id=${id}`);
 }
 
 // 获取个性化设置

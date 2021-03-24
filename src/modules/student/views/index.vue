@@ -119,6 +119,7 @@
     </a-card>
     <a-card style="border-radius: 8px">
       <sinogear-table
+        :rowKey="(record, index) => record.id"
         :columns="columns"
         :dataSource="dataList"
         :operations="operations"
@@ -126,7 +127,7 @@
         @change="handleTablePaginationChange"
         @colSettingChange="(value) => {handleColChange('setting', value)}"
         @colHeightModeChange="(value) => {handleColChange('heightMode', value)}"
-        :dicts="dicts"
+        :dicts="dictList"
         :loading="loading"
       >
         <template slot="buttonsRender">
@@ -214,6 +215,7 @@
       SinogearTable,
       SinogearDictSelect
     },
+
     mounted() {
       this.initDicts();
     },
@@ -238,13 +240,14 @@
         //列表数据源
         dataList:[],
         loading: false,
-        dicts: [],
+        dicts: {},
+        dictList:{},
         collapse: false,
         columns: [
           {dataIndex: 'name', title: '姓名', scopedSlots: { customRender: 'name' }, visible: true},
           {dataIndex: 'cardnum', title: '学号'},
           {dataIndex: 'classnum', title: '班级'},
-          {dataIndex: 'sex', title: '性别', dicts: "XB"},
+          {dataIndex: 'sex', title: '性别', dicts:"XB"},
           {dataIndex: 'age', title: '年龄'},
           {dataIndex: 'hobby', title: '爱好'},
           {dataIndex: 'operate', title: '操作', scopedSlots: { customRender: 'operate' }}
@@ -252,6 +255,7 @@
         visible: false,
         type: '',
         item: {
+          id: '',
           name: '',
           cardnum: '',
           classnum: '',
@@ -273,11 +277,11 @@
        'queryData','deleteData', 'addData', 'editData', 'getDictItems'
       ]),
        initDicts() {
-      this.getDictItems("XB")
+        this.getDictItems("XB")
         .then((res) => {
-          console.info(res);
           this.dicts = res.map.data;
-        })
+          this.dictList = {"XB":[{"code":"1","detail":"男"},{"code":"2","detail":"女"}]};
+         })
         .catch((err) => {
           console.info(err);
         });
@@ -296,6 +300,7 @@
         this.handleQuery();
       },
       handleQuery() {
+
         //1.调用查询接口获取数据
         //查询接口返回：{"appcode":"0","msg":"","map":{"data":{"limit":2,"total":12,"rows":[{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:33","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:33","id":"1374309837730541569","name":"张三","cardnum":"NO1","classnum":"一班","sex":"1","hobby":"唱歌","age":10},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:34","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:34","id":"1374309841367003137","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309844860858369","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309846572134402","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309848623149057","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309850288287745","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309851907289090","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:37","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:37","id":"1374309853756977153","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:38","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:38","id":"1374309859872272385","name":"张三"},{"bae002":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae003":"2021-03-22 11:16:59","bae004":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae005":"2021-03-22 11:16:59","id":"e87da9acc3315b94e7152a9986a0cc8d","name":"张三"}]}}}
         this.loading = true
@@ -306,6 +311,7 @@
           this.dataList = json.data.rows
           // 分页器数据更新
           this.pagination.total = json.data.total
+ 
         })
         .catch((err) => {
           this.$throw(err, '错误', err)
@@ -315,11 +321,12 @@
       },
       handleReset() {
         this.form.resetFields();
-        this.handleQuery();
+        //重置功能不需要重新刷列表数据
+        //this.handleQuery();
       },
       handleDeleteClick(val) {
         const id = val.id;
-        this.deleteData({id, queryParams: this.form.getFieldsValue(), pagination: this.pagination});
+        this.deleteData(id);
         this.handleQuery();
       },
       handleShowViewModal(type, data) {
@@ -349,23 +356,12 @@
       handleConfirm() {
         const data = this.$refs.editFormRef.form.getFieldsValue();
         if (this.type === 'create') {
-          this.addData({
-            item: data,
-            queryParams: this.form.getFieldsValue(),
-            pagination: this.pagination,
-            callback: () => {
-              this.$message.success('操作成功')
-            }
-          })
+          console.info(data);
+          this.addData(data)
+           this.handleQuery();
         } else if (this.type === 'edit') {
-          this.editData({
-            item: Object.assign({}, this.$refs.editFormRef.formData, data),
-            queryParams: this.form.getFieldsValue(),
-            pagination: this.pagination,
-            callback: () => {
-              this.$message.success('操作成功')
-            }
-          })
+          this.editData(Object.assign({}, this.$refs.editFormRef.formData, data));
+           this.handleQuery();
         }
         this.visible = false;
       }
