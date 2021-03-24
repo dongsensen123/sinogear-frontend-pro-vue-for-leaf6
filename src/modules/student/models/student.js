@@ -3,8 +3,6 @@ import {
   handleAddData,
   handleEditData,
   handleDeleteData,
-  getStudentConfig,
-  saveStudentConfig,
   getDictItems
 } from "../services/student";
 import Vue from 'vue';
@@ -17,23 +15,12 @@ const state = {
     total: 0,
     pageSize: 10
   },
-  item: {},
-  studentConfig: {}
+  item: {}
 };
 
 const mutations = {
-  queryDataEnd: (state, payload) => {
-    for (const item in payload) {
-      state[item] = payload[item];
-    }
-  },
-  saveStudentConfigEnd: (state, payload) => {
-    if (payload.queryParams) {
-      state.studentConfig = payload.queryParams;
-    }
-    if (payload.pagination) {
-      state.pagination = payload.pagination;
-    }
+  CHANGE_NAME: (state, payload) => {
+    state.TEST_NAME = payload;
   }
 };
 
@@ -42,17 +29,14 @@ const actions = {
     const data = await getDictItems(payload);
     return data
   },
+  changeName({ commit }, payload) {
+    commit('CHANGE_NAME', payload);
+  },
   queryData: async (context, payload) => {
+    console.debug(payload);
     const { queryParams, pagination } = payload;
-    const obj = {};
-    Object.keys(queryParams).map((item) => {
-      if (item !== 'operations') {
-        obj[item] = queryParams[item];
-      }
-    });
-    const actionPayload = { queryConditions: obj, pagination };
-    const response = await handleQueryData(actionPayload);
-    context.commit('queryDataEnd', response)
+    const actionPayload = { queryConditions: queryParams, pagination };
+    return handleQueryData(actionPayload);
   },
   /**
    * 删除数据
@@ -63,8 +47,7 @@ const actions = {
    */
   deleteData: async (context, payload) => {
     await handleDeleteData({ id: payload.id });
-    const response = await handleQueryData(payload);
-    context.commit('queryDataEnd', response)
+    await handleQueryData(payload);
   },
   /**
    * 新增数据
@@ -72,8 +55,7 @@ const actions = {
    */
   addData: async (context, payload) => {
     await handleAddData({ item: { ...payload.item } });
-    const response = await handleQueryData(payload);
-    context.commit('queryDataEnd', response);
+    await handleQueryData(payload);
     if (payload.callback) {
       payload.callback();
     }
@@ -86,31 +68,10 @@ const actions = {
   editData: async (context, payload) => {
     const { item } = payload;
     await handleEditData({ item, id: item.id });
-    const response = await handleQueryData(payload);
-    context.commit('queryDataEnd', response);
+    await handleQueryData(payload);
     if (payload.callback) {
       payload.callback();
     }
-  },
-  getStudentConfig: async (context, payload) => {
-    try {
-      const result = await getStudentConfig(payload);
-      if (result && result.attribute) {
-        context.commit('saveStudentConfigEnd', result.attribute)
-      }
-    } catch (e) {
-      Vue.prototype.$message(e.errHint)
-    }
-  },
-  saveStudentConfig: async (context, payload) => {
-    const data = { type: 'example-student', attribute: payload };
-    const result = await saveStudentConfig(data);
-    context.commit('saveStudentConfigEnd', result.attribute)
-  },
-  updateQueryConditionsAndQueryData: async (context, payload) => {
-    await context.dispatch('saveStudentConfig', payload);
-    context.commit('saveStudentConfigEnd', payload);
-    await context.dispatch('queryData', payload);
   }
 };
 

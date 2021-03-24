@@ -17,9 +17,9 @@ import { io } from 'sinobest-functions';
  * @param {number} current 分页信息 current
  * @return {Promise.<void>} 返回数据
  */
-export async function handleQueryData({ queryConditions, pagination: { pageSize, page } }) {
+export async function handleQueryData({ queryConditions, pagination: { pageSize, current } }) {
   return io.post(
-      `${config.mockContextPath}/api/students/query?pageSize=${pageSize}&page=${page}`,
+      `${config.contextPath}/leaf6-example-service/api/student/v1/list?pagesize=${pageSize}&page=${current}`,
       queryConditions || {}
   );
 }
@@ -30,7 +30,7 @@ export async function handleQueryData({ queryConditions, pagination: { pageSize,
  * @return {Promise.<void>} 返回数据
  */
 export async function handleQueryDataById({ id }) {
-  return io.get(`${config.mockContextPath}/api/students/${id}`);
+  return io.get(`${config.contextPath}/api/students/${id}`);
 }
 
 /**
@@ -39,7 +39,7 @@ export async function handleQueryDataById({ id }) {
  * @return {Promise.<void>} 返回请求数据结果
  */
 export async function handleAddData({ item }) {
-  return io.post(`${config.mockContextPath}/api/students`, item);
+  return io.post(`${config.contextPath}/api/students`, item);
 }
 
 /**
@@ -49,7 +49,7 @@ export async function handleAddData({ item }) {
  * @return {Promise.<void>} 返回请求数据结果
  */
 export async function handleEditData({ item, id }) {
-  return io.put(`${config.mockContextPath}/api/students/${id}`, item);
+  return io.put(`${config.contextPath}/api/students/${id}`, item);
 }
 
 /**
@@ -58,7 +58,7 @@ export async function handleEditData({ item, id }) {
  * @return {Promise.<void>} 返回请求数据结果
  */
 export async function handleDeleteData({ id }) {
-  return io.delete(`${config.mockContextPath}/api/students/${id}`);
+  return io.delete(`${config.contextPath}/api/students/${id}`);
 }
 
 // 获取个性化设置

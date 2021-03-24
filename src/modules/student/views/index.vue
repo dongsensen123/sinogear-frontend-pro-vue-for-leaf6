@@ -27,7 +27,7 @@
             :xl="colResponsiveProps.xl"
           >
             <a-form-item label="学号：">
-              <a-input v-decorator="['cardNum', {initialValue: queryParams.cardNum}]" placeholder="请输入学号"></a-input>
+              <a-input v-decorator="['cardnum', {initialValue: queryParams.cardnum}]" placeholder="请输入学号"></a-input>
             </a-form-item>
           </a-col>
           <a-col
@@ -39,7 +39,7 @@
             :xl="colResponsiveProps.xl"
           >
             <a-form-item label="班级：">
-              <a-input v-decorator="['classNum', {initialValue: queryParams.classNum}]" placeholder="请输入班级"></a-input>
+              <a-input v-decorator="['classnum', {initialValue: queryParams.classnum}]" placeholder="请输入班级"></a-input>
             </a-form-item>
           </a-col>
           <a-col
@@ -120,12 +120,14 @@
     <a-card style="border-radius: 8px">
       <sinogear-table
         :columns="columns"
-        :dataSource="data"
+        :dataSource="dataList"
         :operations="operations"
-        :pagination="getPagination"
+        :pagination="pagination"
         @change="handleTablePaginationChange"
         @colSettingChange="(value) => {handleColChange('setting', value)}"
         @colHeightModeChange="(value) => {handleColChange('heightMode', value)}"
+        :dicts="dicts"
+        :loading="loading"
       >
         <template slot="buttonsRender">
           <a-button type="primary" @click="handleShowViewModal('create')">
@@ -149,20 +151,6 @@
             <a-icon slot="icon" type="question-circle" />
             <span class="table-operator">删除</span>
           </a-popconfirm>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a-dropdown>
-            <span style="cursor: pointer">更多操作</span>
-            <a-menu
-              slot="overlay"
-            >
-            <a-menu-item>
-              操作一
-            </a-menu-item>
-            <a-menu-item>
-              操作二
-            </a-menu-item>
-            </a-menu>
-          </a-dropdown>
         </template>
       </sinogear-table>
     </a-card>
@@ -241,23 +229,32 @@
           lg: 8,
           xl: 8
         },
-        dicts: {},
+        //分页信息
+        pagination: {
+          current: 1,
+          pageSize: 10,
+          total: 0
+        },
+        //列表数据源
+        dataList:[],
+        loading: false,
+        dicts: [],
         collapse: false,
         columns: [
           {dataIndex: 'name', title: '姓名', scopedSlots: { customRender: 'name' }, visible: true},
-          {dataIndex: 'cardNum', title: '学号'},
-          {dataIndex: 'classNum', title: '班级'},
-          {dataIndex: 'sex', title: '性别'},
-          {dataIndex: 'age', title: '爱好'},
-          {dataIndex: 'hobby', title: '年龄'},
+          {dataIndex: 'cardnum', title: '学号'},
+          {dataIndex: 'classnum', title: '班级'},
+          {dataIndex: 'sex', title: '性别', dicts: "XB"},
+          {dataIndex: 'age', title: '年龄'},
+          {dataIndex: 'hobby', title: '爱好'},
           {dataIndex: 'operate', title: '操作', scopedSlots: { customRender: 'operate' }}
         ],
         visible: false,
         type: '',
         item: {
           name: '',
-          cardNum: '',
-          classNum: '',
+          cardnum: '',
+          classnum: '',
           sex: '',
           age: '',
           hobby: ''
@@ -267,16 +264,8 @@
       }
     },
     computed: {
-      ...mapState('student', {
-        pagination: state => Object.assign({}, state.pagination),
-        data: state => state.map.data.rows,
-        studentConfig: state => state.studentConfig
-      }),
       studentForm() {
         return this.form.getFieldsValue();
-      },
-      getPagination() {
-        return Object.assign({}, {current: this.pagination.page}, this.pagination)
       }
     },
     methods: {
@@ -284,7 +273,7 @@
        'queryData','deleteData', 'addData', 'editData', 'getDictItems'
       ]),
        initDicts() {
-      this.getDictItems("XB,WHCD")
+      this.getDictItems("XB")
         .then((res) => {
           console.info(res);
           this.dicts = res.map.data;
@@ -295,7 +284,8 @@
     },
       handleTablePaginationChange(pagination) {
         const newPagination = Object.assign({}, this.pagination, {...pagination, page: pagination.current});
-        this.queryData({queryParams: this.form.getFieldsValue(), pagination: newPagination})
+        this.pagination = newPagination;
+        this.handleQuery();
       },
       handleColChange(type, value) {
         if (type === 'setting'){
@@ -303,18 +293,34 @@
         } else {
           this.operations = Object.assign({}, this.operations, { colHeightMode: value })
         }
-        this.queryData({queryParams: this.form.getFieldsValue(), pagination: this.pagination});
+        this.handleQuery();
       },
       handleQuery() {
+        //1.调用查询接口获取数据
+        //查询接口返回：{"appcode":"0","msg":"","map":{"data":{"limit":2,"total":12,"rows":[{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:33","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:33","id":"1374309837730541569","name":"张三","cardnum":"NO1","classnum":"一班","sex":"1","hobby":"唱歌","age":10},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:34","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:34","id":"1374309841367003137","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309844860858369","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309846572134402","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309848623149057","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309850288287745","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309851907289090","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:37","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:37","id":"1374309853756977153","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:38","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:38","id":"1374309859872272385","name":"张三"},{"bae002":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae003":"2021-03-22 11:16:59","bae004":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae005":"2021-03-22 11:16:59","id":"e87da9acc3315b94e7152a9986a0cc8d","name":"张三"}]}}}
+        this.loading = true
         this.queryData({queryParams: this.form.getFieldsValue(), pagination: this.pagination})
+        .then((res) => {
+          const json = res.map
+          // 多记录表记录
+          this.dataList = json.data.rows
+          // 分页器数据更新
+          this.pagination.total = json.data.total
+        })
+        .catch((err) => {
+          this.$throw(err, '错误', err)
+          
+        })
+        this.loading = false;
       },
       handleReset() {
         this.form.resetFields();
-        this.queryData({queryParams: {}, pagination: this.pagination});
+        this.handleQuery();
       },
       handleDeleteClick(val) {
         const id = val.id;
         this.deleteData({id, queryParams: this.form.getFieldsValue(), pagination: this.pagination});
+        this.handleQuery();
       },
       handleShowViewModal(type, data) {
         switch (type) {
@@ -365,28 +371,7 @@
       }
     },
     created() {
-      this.getStudentConfig('example-student').then(() => {
-        if (this.studentConfig && JSON.stringify(this.studentConfig) !== '{}') {
-          if (this.studentConfig.operations) {
-            this.operations = this.studentConfig.operations;
-          } else {
-            this.operations = { colHeightMode: true, fullScreen: true, reload: true, colSetting: true };
-          }
-          const obj = {};
-          Object.keys(this.studentConfig).map((item) => {
-            if (item !== 'operation') {
-              obj[item] = this.studentConfig[item];
-            }
-          });
-          if (JSON.stringify(obj) !== '{}') {
-            this.queryParams = obj;
-            this.updateQueryConditionsAndQueryData({queryParams: {operations: this.operations, ...obj}, pagination: {page: 1, pageSize: 10}})
-          }
-        } else {
-          this.operations = { colHeightMode: true, fullScreen: true, reload: true, colSetting: true };
-          this.handleQuery();
-        }
-      });
+
     }
   }
 </script>
