@@ -121,14 +121,11 @@
       <sinogear-table
         :rowKey="(record, index) => record.id"
         :columns="columns"
+        v-bind:dicts="dictList"
         :dataSource="dataList"
         :operations="operations"
         :pagination="pagination"
-        @change="handleTablePaginationChange"
-        @colSettingChange="(value) => {handleColChange('setting', value)}"
-        @colHeightModeChange="(value) => {handleColChange('heightMode', value)}"
-        :dicts="dictList"
-        :loading="loading"
+        @change="handleTablePaginationChange"  
       >
         <template slot="buttonsRender">
           <a-button type="primary" @click="handleShowViewModal('create')">
@@ -170,7 +167,14 @@
 </template>
 
 <script>
-  import { mapActions, mapState } from 'vuex';
+import {
+  handleQueryData,
+  handleAddData,
+  handleEditData,
+  handleDeleteData,
+  getDictItems
+} from "../services/student";
+
   import { SinogearTable, SinogearDictSelect } from 'sinogear-vue';
   
   import {
@@ -217,7 +221,6 @@
     },
 
     mounted() {
-      this.initDicts();
     },
     data: function () {
       return {
@@ -239,9 +242,8 @@
         },
         //列表数据源
         dataList:[],
+        dicts:{},
         loading: false,
-        dicts: {},
-        dictList:{},
         collapse: false,
         columns: [
           {dataIndex: 'name', title: '姓名', scopedSlots: { customRender: 'name' }, visible: true},
@@ -268,19 +270,14 @@
       }
     },
     computed: {
-      studentForm() {
-        return this.form.getFieldsValue();
-      }
+
     },
     methods: {
-      ...mapActions('student', [
-       'queryData','deleteData', 'addData', 'editData', 'getDictItems'
-      ]),
        initDicts() {
         this.getDictItems("XB")
         .then((res) => {
           this.dicts = res.map.data;
-          this.dictList = {"XB":[{"code":"1","detail":"男"},{"code":"2","detail":"女"}]};
+          this.dictList = res.map.data;
          })
         .catch((err) => {
           console.info(err);
@@ -304,7 +301,7 @@
         //1.调用查询接口获取数据
         //查询接口返回：{"appcode":"0","msg":"","map":{"data":{"limit":2,"total":12,"rows":[{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:33","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:33","id":"1374309837730541569","name":"张三","cardnum":"NO1","classnum":"一班","sex":"1","hobby":"唱歌","age":10},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:34","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:34","id":"1374309841367003137","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309844860858369","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309846572134402","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309848623149057","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309850288287745","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309851907289090","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:37","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:37","id":"1374309853756977153","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:38","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:38","id":"1374309859872272385","name":"张三"},{"bae002":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae003":"2021-03-22 11:16:59","bae004":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae005":"2021-03-22 11:16:59","id":"e87da9acc3315b94e7152a9986a0cc8d","name":"张三"}]}}}
         this.loading = true
-        this.queryData({queryParams: this.form.getFieldsValue(), pagination: this.pagination})
+        handleQueryData({queryParams: this.form.getFieldsValue(), pagination: this.pagination})
         .then((res) => {
           const json = res.map
           // 多记录表记录
@@ -326,8 +323,17 @@
       },
       handleDeleteClick(val) {
         const id = val.id;
-        this.deleteData(id);
-        this.handleQuery();
+        this.handleDeleteData(id).then((res) => {
+          console.info(res);
+              if (res.appcode == '0') {
+                this.handleQuery();
+              } else {
+                this.$notification.error({
+                  message: '错误',
+                  description: res.msg,
+                })
+              }
+            });
       },
       handleShowViewModal(type, data) {
         switch (type) {
@@ -356,19 +362,42 @@
       handleConfirm() {
         const data = this.$refs.editFormRef.form.getFieldsValue();
         if (this.type === 'create') {
-          console.info(data);
-          this.addData(data)
-           this.handleQuery();
+          handleAddData(data).then((res) => {
+              if (res.appcode == '0') {
+                this.$notification.success({
+                  message: '成功',
+                  description: res.msg || '创建成功',
+                })
+                this.handleQuery();
+              } else {
+                this.$notification.error({
+                  message: '错误',
+                  description: res.msg,
+                })
+              }
+            })
         } else if (this.type === 'edit') {
-          this.editData(Object.assign({}, this.$refs.editFormRef.formData, data));
-           this.handleQuery();
+           handleEditData(Object.assign({}, this.$refs.editFormRef.formData, data)).then((res) => {
+              if (res.appcode == '0') {
+                this.$notification.success({
+                  message: '成功',
+                  description: res.msg || '修改成功',
+                })
+                this.handleQuery();
+              } else {
+                this.$notification.error({
+                  message: '错误',
+                  description: res.msg,
+                })
+              }
+            });
         }
         this.visible = false;
       }
     },
-    created() {
-
-    }
+        created: function () {
+            this.initDicts();
+        },
   }
 </script>
 
