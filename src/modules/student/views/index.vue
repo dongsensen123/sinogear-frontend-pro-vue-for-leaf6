@@ -121,12 +121,13 @@
       <sinogear-table
         :rowKey="(record, index) => record.id"
         :columns="columns"
-        :dicts="dictList"
+        :dicts="dicts"
         :dataSource="dataList"
         :operations="operations"
         :pagination="pagination"
         @change="handleTablePaginationChange"  
         :loading = "loading"
+        v-if="showTable"
       >
         <template slot="buttonsRender">
           <a-button type="primary" @click="handleShowViewModal('create')">
@@ -220,9 +221,11 @@ import {
       SinogearTable,
       SinogearDictSelect
     },
-
+    beforeMount(){
+      console.info('beforeMount');
+    },
     mounted() {
-       
+      console.info('mounted');
     },
     data: function () {
       return {
@@ -245,7 +248,9 @@ import {
         //列表数据源
         dataList:[],
         dicts:{},
-        dictList:{},
+        //table dicts属性是组件初始化时获取的，后面属性值的调整不会影响到组件，所以通过设置字典初始化后才初始化组件解决问题
+        showTable:false,
+
         loading: false,
         collapse: false,
         columns: [
@@ -280,7 +285,7 @@ import {
         getDictItems("XB")
         .then((res) => {
           this.dicts = res.map.data;
-          this.dictList = res.map.data;
+          this.showTable=true;
          })
         .catch((err) => {
           console.info(err);
