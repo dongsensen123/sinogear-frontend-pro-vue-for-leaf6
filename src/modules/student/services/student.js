@@ -17,10 +17,10 @@ import { io } from 'sinobest-functions';
  * @param {number} current 分页信息 current
  * @return {Promise.<void>} 返回数据
  */
-export async function handleQueryData({ queryConditions, pagination: { pageSize, current } }) {
+export async function handleQueryData( queryParams,pageSize, current) {
   return io.post(
       `${config.contextPath}/leaf6-example-service/api/student/v1/list?pagesize=${pageSize}&page=${current}`,
-      queryConditions || {}
+      queryParams || {}
   );
 }
 

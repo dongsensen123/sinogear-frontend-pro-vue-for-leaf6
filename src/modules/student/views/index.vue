@@ -121,11 +121,12 @@
       <sinogear-table
         :rowKey="(record, index) => record.id"
         :columns="columns"
-        v-bind:dicts="dictList"
+        :dicts="dictList"
         :dataSource="dataList"
         :operations="operations"
         :pagination="pagination"
         @change="handleTablePaginationChange"  
+        :loading = "loading"
       >
         <template slot="buttonsRender">
           <a-button type="primary" @click="handleShowViewModal('create')">
@@ -221,6 +222,7 @@ import {
     },
 
     mounted() {
+       
     },
     data: function () {
       return {
@@ -243,6 +245,7 @@ import {
         //列表数据源
         dataList:[],
         dicts:{},
+        dictList:{},
         loading: false,
         collapse: false,
         columns: [
@@ -274,7 +277,7 @@ import {
     },
     methods: {
        initDicts() {
-        this.getDictItems("XB")
+        getDictItems("XB")
         .then((res) => {
           this.dicts = res.map.data;
           this.dictList = res.map.data;
@@ -301,9 +304,10 @@ import {
         //1.调用查询接口获取数据
         //查询接口返回：{"appcode":"0","msg":"","map":{"data":{"limit":2,"total":12,"rows":[{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:33","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:33","id":"1374309837730541569","name":"张三","cardnum":"NO1","classnum":"一班","sex":"1","hobby":"唱歌","age":10},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:34","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:34","id":"1374309841367003137","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309844860858369","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:35","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:35","id":"1374309846572134402","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309848623149057","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309850288287745","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:36","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:36","id":"1374309851907289090","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:37","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:37","id":"1374309853756977153","name":"张三"},{"bae002":"b5b74925-d89e-46dd-948a-26e40b94698f","bae003":"2021-03-23 18:39:38","bae004":"b5b74925-d89e-46dd-948a-26e40b94698f","bae005":"2021-03-23 18:39:38","id":"1374309859872272385","name":"张三"},{"bae002":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae003":"2021-03-22 11:16:59","bae004":"dd55bda7-df0d-d4b7-799b-7056717c6923","bae005":"2021-03-22 11:16:59","id":"e87da9acc3315b94e7152a9986a0cc8d","name":"张三"}]}}}
         this.loading = true
-        handleQueryData({queryParams: this.form.getFieldsValue(), pagination: this.pagination})
+        handleQueryData(this.form.getFieldsValue(), this.pagination.pageSize,this.pagination.current)
         .then((res) => {
           const json = res.map
+          console.info('json:',json);
           // 多记录表记录
           this.dataList = json.data.rows
           // 分页器数据更新
@@ -323,7 +327,7 @@ import {
       },
       handleDeleteClick(val) {
         const id = val.id;
-        this.handleDeleteData(id).then((res) => {
+        handleDeleteData(id).then((res) => {
           console.info(res);
               if (res.appcode == '0') {
                 this.handleQuery();
@@ -395,9 +399,9 @@ import {
         this.visible = false;
       }
     },
-        created: function () {
-            this.initDicts();
-        },
+    created: function () {
+        this.initDicts();
+    }
   }
 </script>
 
