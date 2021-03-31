@@ -101,8 +101,12 @@ yarn run build
     │      GlobalTagsView.vue
     │
     ├─router                                 // 路由
-    │      index.js
-    │
+    │    │ index.js                          //路由设置入口文件
+    │    │ routes.js                         //路由总配置文件
+    │    └─一级模块名称                       // 一级模块名称
+    │          │  index.js                   // 一级模块路由入口配置
+    │          └─二级模块名称                 // 二级模块名称（根据模块实际情况确定是采用几级目录）
+    │               index.js                 // 二级模块路由配置
     ├─store                                  // 状态管理
     │      actions.js
     │      getters.js
