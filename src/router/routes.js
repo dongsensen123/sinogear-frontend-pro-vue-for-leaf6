@@ -5,7 +5,6 @@ import LoginContainer from '../modules/user/login/views/index.vue';
 import RegisterContainer from '../modules/user/register/views/index.vue';
 import ForgotPassword from '../modules/user/password/forgot-password/views/index.vue';
 import UpdateExpiredPassword from '../modules/user/password/update-expired-password/views/index.vue';
-import StudentContainer from '../modules/student/views/index.vue';
 import LayoutContainer from '../layouts/Layout.vue';
 import Exception404 from '../modules/exception/views/404.vue';
 import ArticlesContainer from '../modules/list/search-list/views/Articles.vue';
@@ -36,6 +35,7 @@ import Analysis from "../modules/chart/analysis/views/Analysis.vue";
 import Monitor from "../modules/chart/monitor/views/Monitor.vue";
 import DictForm from "../modules/forms/dict-form/views/DictForm.vue";
 import MacroAppLayout from '../layouts/MacroAppLayout.vue';
+import studentRoutes from '@/router/student/index';
 
 const routes = [
   {
@@ -64,14 +64,7 @@ const routes = [
           title: '示例模块'
         },
       },
-      {
-        path: 'example/student',
-        name: 'StudentContainer',
-        component: StudentContainer,
-        meta: {
-          title: '学生管理'
-        }
-      },
+      ...studentRoutes,
       {
         path: 'example/other-demo/home',
         name: 'DemoHome',
