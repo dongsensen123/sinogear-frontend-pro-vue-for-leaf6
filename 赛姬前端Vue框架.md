@@ -68,17 +68,20 @@ yarn run build
 │      index.html                            // html入口
 │      config.js                             // 项目全局变量定义配置文件
 │      less.min.js                           // 主题切换相关文件
-│
+├─mock
+│   ├─js                                     // 支撑框架基础功能的mockjs文件
+│   ├─public                                 // 支撑框架基础功能的静态资源
+│   └─json                                   // 接口模拟的出参json和js文件
+|      └─模块名称                            // 一级模块
+|           └─二级模块名称                   // 二级模块（根据业务实际）
+|                  xxxx.js                  //接口模拟的js文件
+|                  xxxx.json                //接口模拟的json文件
 └─src
     │  App.vue                               // 全局页面入口
     │  main.js                               // 全局配置文件入口
     │  
     ├─resources                              // 本地静态资源
-    │  ├─fonts                               // 图标资源
-    │  │      iconfont.css
-    │  │      iconfont.eot
-    │  │      iconfont.js
-    │  │      iconfont.json
+    │  ├─fonts                               // 字体资源
     │  │      iconfont.svg
     │  │      iconfont.ttf
     │  │      iconfont.woff
@@ -121,22 +124,20 @@ yarn run build
     │      SiderLayout
     │
     └─modules                                // 页面
-        ├─account                            // 个人中心
-        │  │
-        │  ├─models
-        │  │       account.js                // 状态管理
-        │  │
-        │  ├─services
-        │  │       account.js                // 请求服务
-        │  │
-        │  └─views                          // 页面
-        │          Base.vue
-        │          Notification.vue
-        │          index.vue
-        │          UpdatePassword.vue
-        │          UserStatus.vue
+        ├─一级模块名称                        // 一级模块名称
+        │       └─二级模块名称                // 二级模块名称（根据模块实际情况确定是采用几级目录）
+        │               │
+        │               ├─models                           // 可选，只有使用状态管理才需要
+        │               │       account.js                 
+        │               │
+        │               ├─services                        // 请求服务，封装后端api
+        │               │       account.js                 
+        │               │
+        │               └─views                            // 页面
+        │                   │   index.vue
+        │                   └─components                  //放置模块内组件             
         │
-        └─home                               // 首页
+        └─home                                            // 首页
 
 ```
 
