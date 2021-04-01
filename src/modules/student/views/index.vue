@@ -348,7 +348,10 @@ import {
         switch (type) {
           case 'create':
             this.item = {};
-            //this.$refs.editFormRef.form.setFieldsValue({});
+            //重新复位form表单的字段
+            if(this.$refs.editFormRef){
+              this.$refs.editFormRef.form.resetFields();
+            }
             this.title = '新增学生表信息';
             this.okText = '新增';
             break;
