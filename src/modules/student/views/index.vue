@@ -356,11 +356,17 @@ import {
             this.okText = '新增';
             break;
           case 'view':
+            if(this.$refs.editFormRef){
+              this.$refs.editFormRef.form.resetFields();
+            }
             this.item = data;
             this.title = '查看学生表信息';
             this.okText = '确定';
             break;
           case 'edit':
+            if(this.$refs.editFormRef){
+              this.$refs.editFormRef.form.resetFields();
+            }
             this.item = data;
             this.title = '编辑学生表信息';
             this.okText = '保存';
