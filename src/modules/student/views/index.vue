@@ -250,7 +250,7 @@ import {
         dicts:{},
         //table dicts属性是组件初始化时获取的，后面属性值的调整不会影响到组件，所以通过设置字典初始化后才初始化组件解决问题
         showTable:false,
-
+        isCheckPassed:false,
         loading: false,
         collapse: false,
         columns: [
@@ -369,8 +369,21 @@ import {
         this.visible = true;
       },
       handleConfirm() {
+        this.isCheckPassed = false;
+        this.$refs.editFormRef.form.validateFields((err, values) => {
+            if(err){
+                this.visible=true;
+            }else{
+              this.isCheckPassed = true;
+            }
+        });
+        if(!this.isCheckPassed){
+          return;
+        }
         const data = this.$refs.editFormRef.form.getFieldsValue();
+
         if (this.type === 'create') {
+
           handleAddData(data).then((res) => {
               if (res.appcode == '0') {
                 this.$notification.success({
