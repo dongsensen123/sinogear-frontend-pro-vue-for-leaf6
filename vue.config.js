@@ -52,7 +52,7 @@ const proxy = {
 		changeOrigin: true,
 	},
 	'/api/micro-app/management': {
-        target: 'http://192.168.13.100:8020', // 子应用[系统管理]后端接口地址, 根据实际情况按需配置, 如与主应用后端接口相同前缀，可不配置
+        target: 'http://192.168.14.103:8020', // 子应用[系统管理]后端接口地址, 根据实际情况按需配置, 如与主应用后端接口相同前缀，可不配置
         changeOrigin: true
     },
 };
