@@ -408,7 +408,7 @@ import {
               }
             })
         } else if (this.type === 'edit') {
-           handleEditData(Object.assign({}, this.$refs.editFormRef.formData, data)).then((res) => {
+           handleEditData(this.$refs.editFormRef.formData.id,Object.assign({}, this.$refs.editFormRef.formData, data)).then((res) => {
               if (res.appcode == '0') {
                 this.$notification.success({
                   message: '成功',
